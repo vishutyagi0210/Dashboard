@@ -1,9 +1,9 @@
 {
-  "name": "future-development",
-  "full_name": "OT-CONTAINER-KIT/future-development",
-  "language": null,
+  "name": "backup-operator",
+  "full_name": "OT-CONTAINER-KIT/backup-operator",
+  "language": "Go",
   "default_branch": "main",
-  "last_synced": "2026-08-11T10:36:38.369047+00:00",
+  "last_synced": "2026-08-11T10:36:45.972776+00:00",
   "insights": {
     "open_issues": 0,
     "open_prs": 0
@@ -13,10 +13,6 @@
     "total_count": 0
   },
   "top_contributors": [
-    {
-      "login": "sandy724",
-      "commits": 7
-    },
     {
       "login": "iamabhishek-dubey",
       "commits": 2

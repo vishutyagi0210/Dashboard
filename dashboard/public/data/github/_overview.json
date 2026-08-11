@@ -1,0 +1,278 @@
+{
+  "org": "OT-CONTAINER-KIT",
+  "provider": "github",
+  "last_synced": "2026-08-11T10:37:01.955733+00:00",
+  "summary": {
+    "total_repos": 27,
+    "total_open_issues": 215,
+    "total_open_prs": 127,
+    "overall_success_rate": 75.0
+  },
+  "dora_metrics": {
+    "deployment_frequency": {
+      "value": 17,
+      "unit": "deploys/week",
+      "trend": "stable"
+    },
+    "change_failure_rate": {
+      "value": 12.5,
+      "unit": "percent",
+      "trend": "stable"
+    },
+    "mttr": {
+      "value": 10579,
+      "unit": "minutes",
+      "trend": "stable"
+    },
+    "pr_cycle_time": {
+      "value": 0,
+      "unit": "hours",
+      "trend": "stable"
+    }
+  },
+  "repos": [
+    {
+      "name": "redis",
+      "language": "Shell",
+      "last_run_status": "action_required",
+      "last_run_at": "2026-07-15T09:15:35Z",
+      "success_rate": 60.0,
+      "open_issues": 10,
+      "open_prs": 9
+    },
+    {
+      "name": "redis-operator",
+      "language": "Go",
+      "last_run_status": "skipped",
+      "last_run_at": "2026-08-11T10:20:38Z",
+      "success_rate": 70.0,
+      "open_issues": 146,
+      "open_prs": 71
+    },
+    {
+      "name": "restic",
+      "language": "Shell",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "mysqlbackup",
+      "language": "Shell",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "fasten-docker-build",
+      "language": "Java",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "terraform",
+      "language": "Dockerfile",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "logging-operator",
+      "language": "Go",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 11,
+      "open_prs": 2
+    },
+    {
+      "name": "spinnaker-study",
+      "language": "Java",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "helm-templates",
+      "language": "Smarty",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "postgresql-backup",
+      "language": "Shell",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "Working-with-Helm",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "helm-charts",
+      "language": "Mustache",
+      "last_run_status": "success",
+      "last_run_at": "2026-07-16T12:03:25Z",
+      "success_rate": 70.0,
+      "open_issues": 30,
+      "open_prs": 31
+    },
+    {
+      "name": "k8s-secret-injector",
+      "language": "Go",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 1,
+      "open_prs": 0
+    },
+    {
+      "name": "k8s-vault-webhook",
+      "language": "Go",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 7,
+      "open_prs": 6
+    },
+    {
+      "name": "stable-helm-charts",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "future-development",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "zookeeper",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "mongodb-operator",
+      "language": "Go",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 8,
+      "open_prs": 7
+    },
+    {
+      "name": "OT-DISTROLESS",
+      "language": "Makefile",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "k8s-utils",
+      "language": "Python",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "backup-operator",
+      "language": "Go",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "kubernetes-service-idler",
+      "language": "Go",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 1,
+      "open_prs": 1
+    },
+    {
+      "name": "redis-operator-docs",
+      "language": "CSS",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 1,
+      "open_prs": 0
+    },
+    {
+      "name": "custom-autoscaler",
+      "language": "Go",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "otel-modules",
+      "language": "Dockerfile",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "011y-utils",
+      "language": "Shell",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "Dashboard",
+      "language": "JavaScript",
+      "last_run_status": "success",
+      "last_run_at": "2026-08-11T10:35:54Z",
+      "success_rate": 100.0,
+      "open_issues": 0,
+      "open_prs": 0
+    }
+  ]
+}
