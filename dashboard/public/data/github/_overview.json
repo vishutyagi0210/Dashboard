@@ -1,7 +1,7 @@
 {
   "org": "ot-central-team",
   "provider": "github",
-  "last_synced": "2026-08-11T15:32:42.723505+00:00",
+  "last_synced": "2026-08-11T18:56:55.758867+00:00",
   "summary": {
     "total_repos": 54,
     "total_open_issues": 45,
@@ -503,7 +503,7 @@
       "name": "Dashboard",
       "language": "JavaScript",
       "last_run_status": "success",
-      "last_run_at": "2026-08-11T15:30:39Z",
+      "last_run_at": "2026-08-11T15:33:42Z",
       "success_rate": 100.0,
       "open_issues": 0,
       "open_prs": 0
