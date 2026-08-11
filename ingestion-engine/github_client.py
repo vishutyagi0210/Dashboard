@@ -52,7 +52,12 @@ class GitHubClient:
 
     def get(self, endpoint, params=None):
         response = self._make_request("GET", endpoint, params)
-        return response.json() if response else None
+        if not response or response.status_code == 204:
+            return None
+        try:
+            return response.json()
+        except ValueError:
+            return None
 
     def get_paginated(self, endpoint, params=None):
         """Fetch all pages for a given endpoint."""
@@ -68,10 +73,14 @@ class GitHubClient:
             params["page"] = page
             response = self._make_request("GET", endpoint, params)
             
-            if not response:
+            if not response or response.status_code == 204:
                 break
                 
-            data = response.json()
+            try:
+                data = response.json()
+            except ValueError:
+                break
+                
             if not data:
                 break
                 
