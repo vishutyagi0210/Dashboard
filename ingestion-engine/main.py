@@ -245,7 +245,7 @@ def main():
         "repos": overview_repos
     }
     
-    overview_path = os.path.join(OUTPUT_DIR, "_overview.json")
+    overview_path = os.path.join(OUTPUT_DIR, "github", "_overview.json")
     with open(overview_path, "w") as f:
         json.dump(overview_data, f, indent=2)
         
