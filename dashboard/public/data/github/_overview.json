@@ -1,12 +1,12 @@
 {
   "org": "OT-CONTAINER-KIT",
   "provider": "github",
-  "last_synced": "2026-08-11T11:08:49.618780+00:00",
+  "last_synced": "2026-08-11T12:52:07.702624+00:00",
   "summary": {
-    "total_repos": 27,
+    "total_repos": 28,
     "total_open_issues": 215,
     "total_open_prs": 127,
-    "overall_success_rate": 75.0
+    "overall_success_rate": 71.4
   },
   "dora_metrics": {
     "deployment_frequency": {
@@ -15,7 +15,7 @@
       "trend": "stable"
     },
     "change_failure_rate": {
-      "value": 12.5,
+      "value": 16.7,
       "unit": "percent",
       "trend": "stable"
     },
@@ -269,8 +269,17 @@
       "name": "Dashboard",
       "language": "JavaScript",
       "last_run_status": "success",
-      "last_run_at": "2026-08-11T11:07:45Z",
+      "last_run_at": "2026-08-11T11:09:36Z",
       "success_rate": 100.0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "python-demo-for-dashboard",
+      "language": "Python",
+      "last_run_status": "failure",
+      "last_run_at": "2026-08-11T12:24:20Z",
+      "success_rate": 0.0,
       "open_issues": 0,
       "open_prs": 0
     }

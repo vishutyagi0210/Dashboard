@@ -1,0 +1,33 @@
+{
+  "repo": "python-demo-for-dashboard",
+  "history_depth": 10,
+  "total_runs": 2,
+  "runs": [
+    {
+      "run_id": "31491052853",
+      "workflow": ".github/workflows/ci.yml",
+      "branch": "main",
+      "sha": "ec3cbe6",
+      "trigger": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-08-11T12:24:20Z",
+      "completed_at": "2026-08-11T12:24:20Z",
+      "jobs": [],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31489991096",
+      "workflow": ".github/workflows/ci.yml",
+      "branch": "main",
+      "sha": "8f38645",
+      "trigger": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-08-11T12:10:50Z",
+      "completed_at": "2026-08-11T12:10:50Z",
+      "jobs": [],
+      "artifacts": {}
+    }
+  ]
+}
