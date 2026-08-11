@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 */6 * * *' # Runs every 6 hours
   workflow_dispatch: # Allows manual trigger
+  workflow_run:
+    workflows: ["Build and Push Ingestion Image"]
+    types:
+      - completed
 
 concurrency:
   group: dashboard-ingest
@@ -12,6 +16,7 @@ concurrency:
 jobs:
   ingest-data:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     permissions:
       contents: write # Needed to commit data files back to the repo
     steps:

@@ -7,6 +7,10 @@ on:
     paths:
       - 'dashboard/**' # Only trigger when dashboard code or data changes
   workflow_dispatch: # Allows manual trigger
+  workflow_run:
+    workflows: ["Ingest DevOps Reports"]
+    types:
+      - completed
 
 concurrency:
   group: dashboard-deploy
@@ -15,6 +19,7 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
