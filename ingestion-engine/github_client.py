@@ -75,9 +75,21 @@ class GitHubClient:
             if not data:
                 break
                 
-            results.extend(data)
+            items = data
+            # GitHub often returns {"total_count": X, "items": [...]}
+            if isinstance(data, dict):
+                # Find the first value that is a list
+                for key, value in data.items():
+                    if isinstance(value, list):
+                        items = value
+                        break
+                        
+            if not isinstance(items, list):
+                break
+                
+            results.extend(items)
             
-            if len(data) < params["per_page"]:
+            if len(items) < params["per_page"]:
                 break
                 
             page += 1
