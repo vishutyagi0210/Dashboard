@@ -4,6 +4,63 @@
   "total_runs": 10,
   "runs": [
     {
+      "run_id": "31507344274",
+      "workflow": "Build and Push Ingestion Image",
+      "branch": "main",
+      "sha": "8b08320",
+      "trigger": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-11T15:29:57Z",
+      "completed_at": "2026-08-11T15:30:39Z",
+      "jobs": [
+        {
+          "name": "build-and-push-image",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31494892152",
+      "workflow": "Deploy Dashboard to S3",
+      "branch": "main",
+      "sha": "f25665c",
+      "trigger": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-11T13:11:17Z",
+      "completed_at": "2026-08-11T13:12:00Z",
+      "jobs": [
+        {
+          "name": "build-and-deploy",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31494719135",
+      "workflow": "Ingest DevOps Reports",
+      "branch": "main",
+      "sha": "29041f4",
+      "trigger": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-11T13:09:15Z",
+      "completed_at": "2026-08-11T13:11:14Z",
+      "jobs": [
+        {
+          "name": "ingest-data",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
       "run_id": "31494642158",
       "workflow": "Build and Push Ingestion Image",
       "branch": "main",
@@ -127,63 +184,6 @@
       "conclusion": "success",
       "created_at": "2026-08-11T10:52:25Z",
       "completed_at": "2026-08-11T10:52:56Z",
-      "jobs": [
-        {
-          "name": "build-and-deploy",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31484054410",
-      "workflow": "Ingest DevOps Reports",
-      "branch": "main",
-      "sha": "68f8f0e",
-      "trigger": "workflow_run",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-11T10:51:31Z",
-      "completed_at": "2026-08-11T10:52:23Z",
-      "jobs": [
-        {
-          "name": "ingest-data",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31484022791",
-      "workflow": "Build and Push Ingestion Image",
-      "branch": "main",
-      "sha": "68f8f0e",
-      "trigger": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-11T10:51:04Z",
-      "completed_at": "2026-08-11T10:51:29Z",
-      "jobs": [
-        {
-          "name": "build-and-push-image",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31484022585",
-      "workflow": "Deploy Dashboard to S3",
-      "branch": "main",
-      "sha": "68f8f0e",
-      "trigger": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-11T10:51:04Z",
-      "completed_at": "2026-08-11T10:51:40Z",
       "jobs": [
         {
           "name": "build-and-deploy",

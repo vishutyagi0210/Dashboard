@@ -3,7 +3,7 @@
   "full_name": "ot-central-team/Dashboard",
   "language": "JavaScript",
   "default_branch": "main",
-  "last_synced": "2026-08-11T13:11:05.184464+00:00",
+  "last_synced": "2026-08-11T15:32:35.282620+00:00",
   "insights": {
     "open_issues": 0,
     "open_prs": 0
@@ -15,7 +15,7 @@
   "top_contributors": [
     {
       "login": "vishutyagi0210",
-      "commits": 20
+      "commits": 22
     }
   ],
   "workflows": [

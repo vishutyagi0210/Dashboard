@@ -3,7 +3,7 @@
   "full_name": "ot-central-team/cicd-github-accelerator",
   "language": "Python",
   "default_branch": "main",
-  "last_synced": "2026-08-11T13:10:33.461783+00:00",
+  "last_synced": "2026-08-11T15:32:13.771492+00:00",
   "insights": {
     "open_issues": 0,
     "open_prs": 1
@@ -19,7 +19,7 @@
     },
     {
       "login": "vishutyagi0210",
-      "commits": 11
+      "commits": 12
     },
     {
       "login": "vishuops0210",
@@ -74,10 +74,6 @@
     {
       "name": ".github/workflows/deployment.template.yaml",
       "file": ".github/workflows/deployment.template.yaml"
-    },
-    {
-      "name": "Ingest DevOps Reports",
-      "file": ".github/workflows/ingest-reports.yml"
     },
     {
       "name": "Test Teams Notification",
