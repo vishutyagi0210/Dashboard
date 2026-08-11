@@ -4,6 +4,82 @@
   "total_runs": 10,
   "runs": [
     {
+      "run_id": "31484022791",
+      "workflow": "Build and Push Ingestion Image",
+      "branch": "main",
+      "sha": "68f8f0e",
+      "trigger": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-11T10:51:04Z",
+      "completed_at": "2026-08-11T10:51:29Z",
+      "jobs": [
+        {
+          "name": "build-and-push-image",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31484022585",
+      "workflow": "Deploy Dashboard to S3",
+      "branch": "main",
+      "sha": "68f8f0e",
+      "trigger": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-11T10:51:04Z",
+      "completed_at": "2026-08-11T10:51:40Z",
+      "jobs": [
+        {
+          "name": "build-and-deploy",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31483008188",
+      "workflow": "Deploy Dashboard to S3",
+      "branch": "main",
+      "sha": "e764e09",
+      "trigger": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-11T10:37:09Z",
+      "completed_at": "2026-08-11T10:37:50Z",
+      "jobs": [
+        {
+          "name": "build-and-deploy",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31482918414",
+      "workflow": "Ingest DevOps Reports",
+      "branch": "main",
+      "sha": "31cd500",
+      "trigger": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-11T10:35:57Z",
+      "completed_at": "2026-08-11T10:37:07Z",
+      "jobs": [
+        {
+          "name": "ingest-data",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
       "run_id": "31482878021",
       "workflow": "Build and Push Ingestion Image",
       "branch": "main",
@@ -111,82 +187,6 @@
       "jobs": [
         {
           "name": "build-and-deploy",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31481795344",
-      "workflow": "Ingest DevOps Reports",
-      "branch": "main",
-      "sha": "1a37b60",
-      "trigger": "workflow_run",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-11T10:20:50Z",
-      "completed_at": "2026-08-11T10:22:02Z",
-      "jobs": [
-        {
-          "name": "ingest-data",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31481750318",
-      "workflow": "Build and Push Ingestion Image",
-      "branch": "main",
-      "sha": "1a37b60",
-      "trigger": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-11T10:20:14Z",
-      "completed_at": "2026-08-11T10:20:48Z",
-      "jobs": [
-        {
-          "name": "build-and-push-image",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31481630832",
-      "workflow": "Deploy Dashboard to S3",
-      "branch": "main",
-      "sha": "331b1e1",
-      "trigger": "workflow_run",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-11T10:18:37Z",
-      "completed_at": "2026-08-11T10:19:02Z",
-      "jobs": [
-        {
-          "name": "build-and-deploy",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31481602554",
-      "workflow": "Ingest DevOps Reports",
-      "branch": "main",
-      "sha": "331b1e1",
-      "trigger": "workflow_run",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-11T10:18:14Z",
-      "completed_at": "2026-08-11T10:18:35Z",
-      "jobs": [
-        {
-          "name": "ingest-data",
           "status": "success",
           "error_snippet": null
         }

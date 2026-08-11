@@ -3,7 +3,7 @@
   "full_name": "OT-CONTAINER-KIT/redis-operator",
   "language": "Go",
   "default_branch": "main",
-  "last_synced": "2026-08-11T10:36:16.968329+00:00",
+  "last_synced": "2026-08-11T10:51:46.915899+00:00",
   "insights": {
     "open_issues": 146,
     "open_prs": 71
@@ -28,6 +28,38 @@
   ],
   "workflows": [
     {
+      "name": "CodeQL",
+      "file": ".github/workflows/codeql-analysis.yml"
+    },
+    {
+      "name": "Verify Codegen",
+      "file": ".github/workflows/verify-codegen.yaml"
+    },
+    {
+      "name": "Semantic PR Validation",
+      "file": ".github/workflows/pr-semantics.yaml"
+    },
+    {
+      "name": "CI",
+      "file": ".github/workflows/ci.yaml"
+    },
+    {
+      "name": "Publish Image",
+      "file": ".github/workflows/publish-image.yaml"
+    },
+    {
+      "name": "Release Charts",
+      "file": ".github/workflows/publish-charts.yaml"
+    },
+    {
+      "name": "Manage stale issues and PRs",
+      "file": ".github/workflows/stale.yaml"
+    },
+    {
+      "name": "Dependabot Updates",
+      "file": "dynamic/dependabot/dependabot-updates"
+    },
+    {
       "name": "Automatic Rebase",
       "file": ".github/workflows/auto-rebase.yaml"
     },
@@ -38,38 +70,6 @@
     {
       "name": "Test Helm Charts",
       "file": ".github/workflows/call-test-charts.yaml"
-    },
-    {
-      "name": "CI",
-      "file": ".github/workflows/ci.yaml"
-    },
-    {
-      "name": "CodeQL",
-      "file": ".github/workflows/codeql-analysis.yml"
-    },
-    {
-      "name": "Semantic PR Validation",
-      "file": ".github/workflows/pr-semantics.yaml"
-    },
-    {
-      "name": "Release Charts",
-      "file": ".github/workflows/publish-charts.yaml"
-    },
-    {
-      "name": "Publish Image",
-      "file": ".github/workflows/publish-image.yaml"
-    },
-    {
-      "name": "Manage stale issues and PRs",
-      "file": ".github/workflows/stale.yaml"
-    },
-    {
-      "name": "Verify Codegen",
-      "file": ".github/workflows/verify-codegen.yaml"
-    },
-    {
-      "name": "Dependabot Updates",
-      "file": "dynamic/dependabot/dependabot-updates"
     },
     {
       "name": "Dependency Graph",
