@@ -1,26 +1,26 @@
 {
-  "org": "OT-CONTAINER-KIT",
+  "org": "ot-central-team",
   "provider": "github",
-  "last_synced": "2026-08-11T12:52:07.702624+00:00",
+  "last_synced": "2026-08-11T13:11:09.095396+00:00",
   "summary": {
-    "total_repos": 28,
-    "total_open_issues": 215,
-    "total_open_prs": 127,
-    "overall_success_rate": 71.4
+    "total_repos": 54,
+    "total_open_issues": 45,
+    "total_open_prs": 41,
+    "overall_success_rate": 54.5
   },
   "dora_metrics": {
     "deployment_frequency": {
-      "value": 17,
+      "value": 15,
       "unit": "deploys/week",
       "trend": "stable"
     },
     "change_failure_rate": {
-      "value": 16.7,
+      "value": 45.5,
       "unit": "percent",
       "trend": "stable"
     },
     "mttr": {
-      "value": 10579,
+      "value": 59,
       "unit": "minutes",
       "trend": "stable"
     },
@@ -32,62 +32,44 @@
   },
   "repos": [
     {
-      "name": "redis",
-      "language": "Shell",
-      "last_run_status": "action_required",
-      "last_run_at": "2026-07-15T09:15:35Z",
-      "success_rate": 60.0,
-      "open_issues": 10,
+      "name": "ci-jenkins-shared-libraries",
+      "language": "Groovy",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 15,
       "open_prs": 9
     },
     {
-      "name": "redis-operator",
-      "language": "Go",
-      "last_run_status": "skipped",
-      "last_run_at": "2026-08-11T10:20:38Z",
-      "success_rate": 70.0,
-      "open_issues": 146,
-      "open_prs": 71
-    },
-    {
-      "name": "restic",
-      "language": "Shell",
+      "name": "ci-jenkins-wrapper-code",
+      "language": "Groovy",
       "last_run_status": "unknown",
       "last_run_at": null,
       "success_rate": 0,
       "open_issues": 0,
-      "open_prs": 0
+      "open_prs": 3
     },
     {
-      "name": "mysqlbackup",
-      "language": "Shell",
+      "name": "cd-ansible-roles",
+      "language": "Python",
       "last_run_status": "unknown",
       "last_run_at": null,
       "success_rate": 0,
-      "open_issues": 0,
+      "open_issues": 3,
       "open_prs": 0
     },
     {
-      "name": "fasten-docker-build",
-      "language": "Java",
+      "name": "backup-accelerator",
+      "language": "Python",
       "last_run_status": "unknown",
       "last_run_at": null,
       "success_rate": 0,
-      "open_issues": 0,
+      "open_issues": 3,
       "open_prs": 0
     },
     {
-      "name": "terraform",
-      "language": "Dockerfile",
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 0,
-      "open_prs": 0
-    },
-    {
-      "name": "logging-operator",
-      "language": "Go",
+      "name": "aws-budget-accelerator",
+      "language": "Python",
       "last_run_status": "unknown",
       "last_run_at": null,
       "success_rate": 0,
@@ -95,115 +77,7 @@
       "open_prs": 2
     },
     {
-      "name": "spinnaker-study",
-      "language": "Java",
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 0,
-      "open_prs": 0
-    },
-    {
-      "name": "helm-templates",
-      "language": "Smarty",
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 0,
-      "open_prs": 0
-    },
-    {
-      "name": "postgresql-backup",
-      "language": "Shell",
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 0,
-      "open_prs": 0
-    },
-    {
-      "name": "Working-with-Helm",
-      "language": null,
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 0,
-      "open_prs": 0
-    },
-    {
-      "name": "helm-charts",
-      "language": "Mustache",
-      "last_run_status": "success",
-      "last_run_at": "2026-07-16T12:03:25Z",
-      "success_rate": 70.0,
-      "open_issues": 30,
-      "open_prs": 31
-    },
-    {
-      "name": "k8s-secret-injector",
-      "language": "Go",
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 1,
-      "open_prs": 0
-    },
-    {
-      "name": "k8s-vault-webhook",
-      "language": "Go",
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 7,
-      "open_prs": 6
-    },
-    {
-      "name": "stable-helm-charts",
-      "language": null,
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 0,
-      "open_prs": 0
-    },
-    {
-      "name": "future-development",
-      "language": null,
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 0,
-      "open_prs": 0
-    },
-    {
-      "name": "zookeeper",
-      "language": null,
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 0,
-      "open_prs": 0
-    },
-    {
-      "name": "mongodb-operator",
-      "language": "Go",
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 8,
-      "open_prs": 7
-    },
-    {
-      "name": "OT-DISTROLESS",
-      "language": "Makefile",
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 0,
-      "open_prs": 0
-    },
-    {
-      "name": "k8s-utils",
+      "name": "aws-cloudwatch-accelerator",
       "language": "Python",
       "last_run_status": "unknown",
       "last_run_at": null,
@@ -212,8 +86,17 @@
       "open_prs": 0
     },
     {
-      "name": "backup-operator",
-      "language": "Go",
+      "name": "azure-budget-accelerator",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 1
+    },
+    {
+      "name": "gcp-cd-accelerator",
+      "language": null,
       "last_run_status": "unknown",
       "last_run_at": null,
       "success_rate": 0,
@@ -221,8 +104,71 @@
       "open_prs": 0
     },
     {
-      "name": "kubernetes-service-idler",
-      "language": "Go",
+      "name": "db-migration-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 1
+    },
+    {
+      "name": "aws-sso-accelerator",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "k8s-accelerator",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 3,
+      "open_prs": 0
+    },
+    {
+      "name": "infra-scanner-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "gcp-budget-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "k8s-vagrant-setup",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "security-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "aws-scp-accelerator",
+      "language": "HCL",
       "last_run_status": "unknown",
       "last_run_at": null,
       "success_rate": 0,
@@ -230,17 +176,8 @@
       "open_prs": 1
     },
     {
-      "name": "redis-operator-docs",
-      "language": "CSS",
-      "last_run_status": "unknown",
-      "last_run_at": null,
-      "success_rate": 0,
-      "open_issues": 1,
-      "open_prs": 0
-    },
-    {
-      "name": "custom-autoscaler",
-      "language": "Go",
+      "name": "zeway",
+      "language": null,
       "last_run_status": "unknown",
       "last_run_at": null,
       "success_rate": 0,
@@ -248,8 +185,125 @@
       "open_prs": 0
     },
     {
-      "name": "otel-modules",
-      "language": "Dockerfile",
+      "name": "cars24",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "fareportal-asr",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 4
+    },
+    {
+      "name": "ot-kogta",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "ot-travclan",
+      "language": "Smarty",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "ot-c360",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "ResourceService",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "AWSImmutableInfraDeployment",
+      "language": "Groovy",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 1
+    },
+    {
+      "name": "ado-template",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "cloudcost-tracker",
+      "language": null,
+      "last_run_status": "success",
+      "last_run_at": "2026-06-29T11:24:40Z",
+      "success_rate": 100.0,
+      "open_issues": 7,
+      "open_prs": 2
+    },
+    {
+      "name": "aws-ecoclean-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "cotoworld",
+      "language": "Smarty",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "ecomexp-infra",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "argocd",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 3
+    },
+    {
+      "name": "ot-fanclash",
+      "language": "HCL",
       "last_run_status": "unknown",
       "last_run_at": null,
       "success_rate": 0,
@@ -258,7 +312,187 @@
     },
     {
       "name": "011y-utils",
-      "language": "Shell",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 7
+    },
+    {
+      "name": "metrics-journey-blueprint",
+      "language": "Python",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "bitbucket-migration-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 1
+    },
+    {
+      "name": "cost-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "Synciq-azure-infra",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "ot-dehaat",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "car24-command-centre",
+      "language": "Groovy",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "cicd-teamcity-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 3
+    },
+    {
+      "name": "cicd-github-accelerator",
+      "language": "Python",
+      "last_run_status": "failure",
+      "last_run_at": "2026-08-04T04:42:46Z",
+      "success_rate": 20.0,
+      "open_issues": 0,
+      "open_prs": 1
+    },
+    {
+      "name": "cicd-azuredevops-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "ot-tripare",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "ot-tripare-client",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "unified-observability-accelerator",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "ot-hrc",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "jenkins-accelerator-deployment",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 1,
+      "open_prs": 0
+    },
+    {
+      "name": "ot-pine-labs",
+      "language": "Python",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "secrets-detector",
+      "language": null,
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 1
+    },
+    {
+      "name": "ot-montra",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "ot-stablemoney",
+      "language": "HCL",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "POC_PR_ALERT",
+      "language": "Python",
+      "last_run_status": "success",
+      "last_run_at": "2026-08-09T06:12:25Z",
+      "success_rate": 50.0,
+      "open_issues": 1,
+      "open_prs": 1
+    },
+    {
+      "name": "jenkins-shared-libraries",
+      "language": "Groovy",
       "last_run_status": "unknown",
       "last_run_at": null,
       "success_rate": 0,
@@ -269,7 +503,7 @@
       "name": "Dashboard",
       "language": "JavaScript",
       "last_run_status": "success",
-      "last_run_at": "2026-08-11T11:09:36Z",
+      "last_run_at": "2026-08-11T13:09:13Z",
       "success_rate": 100.0,
       "open_issues": 0,
       "open_prs": 0

@@ -1,0 +1,87 @@
+{
+  "name": "cicd-github-accelerator",
+  "full_name": "ot-central-team/cicd-github-accelerator",
+  "language": "Python",
+  "default_branch": "main",
+  "last_synced": "2026-08-11T13:10:33.461783+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 1
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "AmanjotSinghSaini-int",
+      "commits": 44
+    },
+    {
+      "login": "vishutyagi0210",
+      "commits": 11
+    },
+    {
+      "login": "vishuops0210",
+      "commits": 5
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Deploy Lambda",
+      "file": ".github/workflows/cd-lambda.yml"
+    },
+    {
+      "name": "Angular Reusable CI Pipeline",
+      "file": ".github/workflows/ci-angular.yml"
+    },
+    {
+      "name": ".NET 4.7 Reusable CI Pipeline",
+      "file": ".github/workflows/ci-dotnet.yml"
+    },
+    {
+      "name": "Drupal Reusable CI Pipeline",
+      "file": ".github/workflows/ci-drupal.yml"
+    },
+    {
+      "name": "Java Reusable CI Pipeline",
+      "file": ".github/workflows/ci-java.yml"
+    },
+    {
+      "name": "Lambda Node.js CI Pipeline",
+      "file": ".github/workflows/ci-lambda-nodejs.yml"
+    },
+    {
+      "name": "Lambda Python CI Pipeline",
+      "file": ".github/workflows/ci-lambda-python.yml"
+    },
+    {
+      "name": "Next.js Reusable CI Pipeline",
+      "file": ".github/workflows/ci-nextjs.yml"
+    },
+    {
+      "name": "Node.js Reusable CI Pipeline",
+      "file": ".github/workflows/ci-nodejs.yml"
+    },
+    {
+      "name": "Python Reusable CI Pipeline",
+      "file": ".github/workflows/ci-python.yml"
+    },
+    {
+      "name": "React Reusable CI Pipeline",
+      "file": ".github/workflows/ci-react.yml"
+    },
+    {
+      "name": ".github/workflows/deployment.template.yaml",
+      "file": ".github/workflows/deployment.template.yaml"
+    },
+    {
+      "name": "Ingest DevOps Reports",
+      "file": ".github/workflows/ingest-reports.yml"
+    },
+    {
+      "name": "Test Teams Notification",
+      "file": ".github/workflows/test-teams.yml"
+    }
+  ]
+}

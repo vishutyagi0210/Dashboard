@@ -1,0 +1,26 @@
+{
+  "name": "AWSImmutableInfraDeployment",
+  "full_name": "ot-central-team/AWSImmutableInfraDeployment",
+  "language": "Groovy",
+  "default_branch": "main",
+  "last_synced": "2026-08-11T13:10:06.637059+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 1
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "sandy724",
+      "commits": 1
+    },
+    {
+      "login": "iamvishant-sharma",
+      "commits": 1
+    }
+  ],
+  "workflows": []
+}

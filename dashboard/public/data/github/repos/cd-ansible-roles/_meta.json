@@ -1,0 +1,30 @@
+{
+  "name": "cd-ansible-roles",
+  "full_name": "ot-central-team/cd-ansible-roles",
+  "language": "Python",
+  "default_branch": "main",
+  "last_synced": "2026-08-11T13:09:34.285915+00:00",
+  "insights": {
+    "open_issues": 3,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "neelamkumariopstree",
+      "commits": 68
+    },
+    {
+      "login": "neelam573",
+      "commits": 15
+    },
+    {
+      "login": "rajatvats-devops",
+      "commits": 3
+    }
+  ],
+  "workflows": []
+}

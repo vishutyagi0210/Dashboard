@@ -1,0 +1,26 @@
+{
+  "name": "cicd-teamcity-accelerator",
+  "full_name": "ot-central-team/cicd-teamcity-accelerator",
+  "language": null,
+  "default_branch": "main",
+  "last_synced": "2026-08-11T13:10:31.780039+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 3
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "ayan-Kapoor-261k01",
+      "commits": 4
+    },
+    {
+      "login": "rajatvats-devops",
+      "commits": 1
+    }
+  ],
+  "workflows": []
+}

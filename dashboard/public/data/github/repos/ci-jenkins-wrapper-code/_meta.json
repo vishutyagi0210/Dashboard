@@ -1,0 +1,30 @@
+{
+  "name": "ci-jenkins-wrapper-code",
+  "full_name": "ot-central-team/ci-jenkins-wrapper-code",
+  "language": "Groovy",
+  "default_branch": "main",
+  "last_synced": "2026-08-11T13:09:32.723357+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 3
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "ShubhMehra-DevOps",
+      "commits": 43
+    },
+    {
+      "login": "neeleshrajput921-blip",
+      "commits": 39
+    },
+    {
+      "login": "anshul81095",
+      "commits": 26
+    }
+  ],
+  "workflows": []
+}

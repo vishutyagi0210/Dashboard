@@ -1,0 +1,99 @@
+{
+  "name": "cotoworld",
+  "full_name": "ot-central-team/cotoworld",
+  "language": "Smarty",
+  "default_branch": "main",
+  "last_synced": "2026-08-11T13:10:13.936446+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "shristi2400",
+      "commits": 3
+    },
+    {
+      "login": "rajatvats-devops",
+      "commits": 1
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Docker Build and Push to ECR (Prod)",
+      "file": ".github/workflows/Airflow-Image-build-prod.yaml"
+    },
+    {
+      "name": "Docker Build and Push to ECR",
+      "file": ".github/workflows/Airflow-Image-build-stage.yaml"
+    },
+    {
+      "name": "User creation Airflow to LKE (Prod)",
+      "file": ".github/workflows/Airflow-User-creation-prod.yaml"
+    },
+    {
+      "name": "User creation Airflow to LKE (Stage)",
+      "file": ".github/workflows/Airflow-User-creation-stage.yaml"
+    },
+    {
+      "name": "Deploy Airflow to LKE (Prod)",
+      "file": ".github/workflows/Airflow-deploy-prod.yaml"
+    },
+    {
+      "name": "Deploy Airflow to LKE (Stage)",
+      "file": ".github/workflows/Airflow-deploy-stage.yaml"
+    },
+    {
+      "name": "Delete_Kafka_Users_prod",
+      "file": ".github/workflows/Delete_kafka_users_prod.yaml"
+    },
+    {
+      "name": "Delete_Kafka_Users_stage",
+      "file": ".github/workflows/Delete_kafka_users_stage.yaml"
+    },
+    {
+      "name": "Generate_secret_Pass_kafkauser_prod",
+      "file": ".github/workflows/Generate_secrets_ca_prod.yaml"
+    },
+    {
+      "name": "Generate_secret_Pass_kafkauser_stage",
+      "file": ".github/workflows/Generate_secrets_ca_stage.yaml"
+    },
+    {
+      "name": "Kafka ingress Setup(Prod)",
+      "file": ".github/workflows/Ingress-setup-prod.yaml"
+    },
+    {
+      "name": "Kafka ingress Setup (Stage)",
+      "file": ".github/workflows/Ingress-setup-stage.yaml"
+    },
+    {
+      "name": "Kafka Cluster Deployment (Prod)",
+      "file": ".github/workflows/Kafka-cluster-setup-prod.yaml"
+    },
+    {
+      "name": "Kafka Cluster Deployment (Stage)",
+      "file": ".github/workflows/Kafka-cluster-setup-stage.yaml"
+    },
+    {
+      "name": "Mirror-maker Deployment (Prod)",
+      "file": ".github/workflows/Mirrormaker2-setup-prod.yaml"
+    },
+    {
+      "name": "Mirror-maker Deployment (Stage)",
+      "file": ".github/workflows/Mirrormaker2-setup-stage.yaml"
+    },
+    {
+      "name": "Upgrade Airflow to LKE (Prod)",
+      "file": ".github/workflows/Update-airflow-prod.yaml"
+    },
+    {
+      "name": "Upgrade Airflow to LKE (Stage)",
+      "file": ".github/workflows/Update-airflow-stage.yaml"
+    }
+  ]
+}

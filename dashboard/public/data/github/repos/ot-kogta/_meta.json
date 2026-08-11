@@ -1,12 +1,12 @@
 {
-  "name": "011y-utils",
-  "full_name": "ot-central-team/011y-utils",
+  "name": "ot-kogta",
+  "full_name": "ot-central-team/ot-kogta",
   "language": null,
   "default_branch": "main",
-  "last_synced": "2026-08-11T13:10:20.278413+00:00",
+  "last_synced": "2026-08-11T13:10:00.355680+00:00",
   "insights": {
     "open_issues": 0,
-    "open_prs": 7
+    "open_prs": 0
   },
   "cache_usage": {
     "total_size_mb": 0.0,
@@ -14,8 +14,8 @@
   },
   "top_contributors": [
     {
-      "login": "komalthakur853",
-      "commits": 5
+      "login": "rajatvats-devops",
+      "commits": 1
     }
   ],
   "workflows": []
