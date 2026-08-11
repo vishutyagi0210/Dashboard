@@ -7,10 +7,10 @@ from log_analyzer import extract_error_snippet
 from dora_calculator import calculate_dora_metrics
 
 # Configuration
-ORG_NAME = "OT-CONTAINER-KIT"
+ORG_NAME = os.environ.get("ORG_NAME", "ot-central-team")
 GH_TOKEN = os.environ.get("GH_TOKEN")
-OUTPUT_DIR = "/app/data"
-HISTORY_DEPTH = 10
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "/app/data")
+HISTORY_DEPTH = int(os.environ.get("HISTORY_DEPTH", "10"))
 
 def fetch_repo_meta(client, owner, repo):
     print(f"  Fetching meta for {repo}...")
