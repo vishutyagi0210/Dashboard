@@ -85,22 +85,43 @@ aws acm describe-certificate \
 **Validate in Hostinger:**
 1. Open your DNS Zone Editor in Hostinger.
 2. Create a new **CNAME** record.
-3. Paste the `Name` and `Value` provided by the previous AWS command.
-4. Wait 5-10 minutes for AWS to verify your domain ownership.
+3. Paste the `Name` provided by the AWS command. *(Note: If your provider is Hostinger, only paste the first part of the Name, e.g., `_5ac1fd08...dashboard`, because Hostinger automatically appends `.tyagi.fun` to the end!)*
+4. Paste the `Value` into the Target box.
+5. Wait 5-15 minutes for AWS to verify your domain ownership. You can check the status in the AWS ACM console (make sure your region is us-east-1)—it will say **Issued** in green when ready.
 
 ---
 
 ## Step 3: Map Domain to S3 via CloudFront
 
-Once the SSL Certificate is issued, configure the CloudFront CDN using the AWS Management Console:
+Once the SSL Certificate is issued, configure the CloudFront CDN using the AWS Management Console. 
+Follow the multi-step "Create Distribution" wizard:
 
-1. Log into the AWS Console and go to **CloudFront** -> **Create Distribution**.
-2. **Origin Domain**: Select your S3 bucket (e.g., `vishal-dashboard-data-2026.s3.ap-south-1.amazonaws.com`).
-3. **Viewer Protocol Policy**: Choose **Redirect HTTP to HTTPS**.
-4. **Alternate domain name (CNAME)**: Enter `dashboard.tyagi.fun`.
-5. **Custom SSL certificate**: Select the ACM certificate you just validated.
-6. **Default root object**: Enter `index.html`.
-7. Click **Create Distribution**.
+**Step 1: Get started**
+- **Distribution name**: `dashboard-tyagi-fun` (or whatever you prefer).
+- **Distribution type**: Select "Single website or app".
+- **Domain**: Leave this entirely blank! (Since your domain is on Hostinger, not Route 53, the wizard will force us to add it *after* creation).
+
+**Step 2: Specify origin**
+- **Origin domain**: Paste your exact S3 Website Endpoint here (e.g., `vishal-dashboard-data-2026.s3-website.ap-south-1.amazonaws.com`). If a yellow box pops up, click the "Use website endpoint" button.
+- **Viewer protocol policy**: Scroll down to Default Cache Behavior and choose **Redirect HTTP to HTTPS**.
+
+**Step 3: Enable security**
+- **Web Application Firewall (WAF)**: Choose **Do not enable security protections** (to avoid extra AWS charges).
+
+*(Note: Step 4 will be skipped since you left Domain blank)*
+
+**Step 4: Review and create**
+- Click **Create distribution** at the bottom.
+
+**Step 5: Add Custom Domain & SSL (Important!)**
+Once the distribution is created and you are on its detail page:
+1. Go to the **General** tab and click **Edit** under **Settings**.
+2. **Alternate domain name (CNAME)**: Click "Add item" and type exactly `dashboard.tyagi.fun`. 
+   > [!WARNING]
+   > Do NOT click the "Route domains to CloudFront" button! That button is only for domains managed by AWS Route 53. Since your domain is on Hostinger, clicking it will cause errors or unnecessary charges.
+3. **Custom SSL certificate**: Select the ACM certificate you validated in Step 2.
+4. **Default root object**: Type `index.html`.
+5. Click **Save changes**.
 
 ---
 
@@ -119,3 +140,20 @@ To enable the `.github/workflow/cd-dashboard.yml` workflow, ensure you have adde
 - `AWS_SECRET_ACCESS_KEY`
 - `AWS_REGION` (Set to `ap-south-1`)
 - `AWS_S3_BUCKET` (The exact name of your bucket)
+
+---
+
+## Troubleshooting
+
+### 1. CloudFront shows a blank page or Access Denied
+Ensure that in **Step 3 (Step 2: Specify origin)** you pasted the S3 **Website Endpoint** (ending in `s3-website.ap-south-1.amazonaws.com`) and NOT the standard S3 REST endpoint.
+
+### 2. CloudFront throws a "504 Gateway Timeout" Error
+This happens if CloudFront tries to talk to the S3 bucket using HTTPS. S3 website endpoints do not support HTTPS! 
+**Fix:** Go to your CloudFront distribution -> **Origins** tab -> Select your origin and click **Edit** -> Scroll to **Protocol** and change it to **HTTP only**. Save changes and wait 3 minutes.
+
+### 3. GitHub Action fails with "Unauthorized" when pulling from GHCR
+GitHub Container Registry (GHCR) images default to private. To fix this, ensure your workflow logs into Docker using the `GITHUB_TOKEN` before running the image, and ensure the job has `packages: read` permissions.
+
+### 4. DNS CNAME not resolving
+Ensure you did not accidentally create a duplicate domain ending (e.g., `dashboard.tyagi.fun.tyagi.fun`). Hostinger automatically appends your root domain to the Name field.
