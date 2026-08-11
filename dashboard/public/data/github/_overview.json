@@ -1,7 +1,7 @@
 {
   "org": "OT-CONTAINER-KIT",
   "provider": "github",
-  "last_synced": "2026-08-11T10:52:18.843339+00:00",
+  "last_synced": "2026-08-11T11:08:49.618780+00:00",
   "summary": {
     "total_repos": 27,
     "total_open_issues": 215,
@@ -269,7 +269,7 @@
       "name": "Dashboard",
       "language": "JavaScript",
       "last_run_status": "success",
-      "last_run_at": "2026-08-11T10:51:29Z",
+      "last_run_at": "2026-08-11T11:07:45Z",
       "success_rate": 100.0,
       "open_issues": 0,
       "open_prs": 0
