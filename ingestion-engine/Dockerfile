@@ -6,4 +6,5 @@ WORKDIR /app
 COPY main.py .
 
 # Run the script
+
 CMD ["python", "main.py"]
