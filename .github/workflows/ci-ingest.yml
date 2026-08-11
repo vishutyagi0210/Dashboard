@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Data Ingestion Engine
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT }} # Uses a PAT to query GitHub API
+          GH_TOKEN: ${{ secrets.DASHBOARD }} # Uses the PAT to query GitHub API
         run: |
           echo "Pulling Python Docker image and running ingestion..."
           # Note: Docker tags must be lowercase, we'll use the repository owner downcased.
