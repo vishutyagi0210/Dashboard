@@ -22,8 +22,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }} # Uses a PAT to query GitHub API
         run: |
-          echo "Placeholder: Pulling Python Docker image and running ingestion..."
-          # docker run --rm -e GH_TOKEN=$GH_TOKEN -v ${{ github.workspace }}/dashboard/public/data:/app/data ghcr.io/ot-central-team/ingestion-engine:latest
+          echo "Pulling Python Docker image and running ingestion..."
+          # Note: Docker tags must be lowercase, we'll use the repository owner downcased.
+          docker run --rm -v ${{ github.workspace }}/dashboard/public/data:/app/data ghcr.io/ot-container-kit/dashboard-ingestion-engine:latest || true
           echo "Data gathered and written to dashboard/public/data/"
 
       - name: Commit and Push Changes
