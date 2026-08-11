@@ -7,6 +7,7 @@ def calculate_dora_metrics(all_runs, prs_data=None):
     now = datetime.now(timezone.utc)
     seven_days_ago = now - timedelta(days=7)
     
+    
     total_runs = len(all_runs)
     successful_runs = 0
     failed_runs = 0

@@ -6,6 +6,7 @@ import AnimatedBackground from './components/AnimatedBackground';
 import BoosterScrollbar from './components/BoosterScrollbar';
 
 import DashboardHome from './pages/DashboardHome';
+import RepoDetails from './pages/RepoDetails';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<DashboardHome />} />
+        <Route path="/repo/:repoName" element={<RepoDetails />} />
       </Routes>
     </HashRouter>
   );
