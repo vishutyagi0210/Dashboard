@@ -1,0 +1,63 @@
+kubectl get events
+kubectl run event-pod --image=nginx
+kubectl get events
+kubectl get events -n kube-system
+kubectl get events -n default
+
+vim /etc/kubernetes/manifests/kube-apiserver.yaml
+- --event-ttl=24h0m0s
+
+What it shows: A list of events like:
+Pod creation/deletion
+Scheduling issues
+Image pull errors
+Failed probes
+Crash loops, etc
+
+--field-selector
+
+
+kubectl get events --field-selector involvedObject.name=test
+kubectl get events --field-selector involvedObject.kind=Pod
+kubectl get events --field-selector=involvedObject.kind=Pod,involvedObject.name=test
+
+
+kubectl get pods --field-selector=status.phase=Running
+kubectl get pods --field-selector=metadata.name=my-pod
+kubectl get pods --field-selector=spec.nodeName=my-node
+kubectl get pods --all-namespaces --field-selector spec.nodeName=node01
+kubectl get pods --all-namespaces --field-selector status.phase=Running
+kubectl get pods --all-namespaces --field-selector status.phase=Pending
+kubectl get pods --all-namespaces --no-headers | grep -v "Running"
+kubectl get pods --field-selector=spec.nodeName=node01,status.phase=Running 
+
+
+logs
+
+kubectl logs test
+
+
+
+
+logs 
+kubectl logs podname
+kubectl get pods -l app=myapp -o name | xargs -I {} kubectl logs {}
+
+vim multi-container-pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-container-pod
+spec:
+  containers:
+    - name: app
+      image: busybox
+      command: ["sh", "-c", "while true; do echo App log; sleep 5; done"]
+    - name: sidecar
+      image: busybox
+      command: ["sh", "-c", "while true; do echo Sidecar log; sleep 5; done"]
+
+
+kubectl logs multi-container-pod -c app
+kubectl logs multi-container-pod -c sidecar
+kubectl logs -f multi-container-pod -c app

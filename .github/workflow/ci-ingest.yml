@@ -1,0 +1,35 @@
+name: Ingest DevOps Reports
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Runs every 6 hours
+  workflow_dispatch: # Allows manual trigger
+
+concurrency:
+  group: dashboard-ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to commit data files back to the repo
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Data Ingestion Engine
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }} # Uses a PAT to query GitHub API
+        run: |
+          echo "Placeholder: Pulling Python Docker image and running ingestion..."
+          # docker run --rm -e GH_TOKEN=$GH_TOKEN -v ${{ github.workspace }}/dashboard/public/data:/app/data ghcr.io/ot-central-team/ingestion-engine:latest
+          echo "Data gathered and written to dashboard/public/data/"
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "DevOps Dashboard Bot"
+          git config --global user.email "bot@devops.local"
+          git add dashboard/public/data/
+          git commit -m "chore: Update dashboard reports and telemetry data" || echo "No changes to commit"
+          git push

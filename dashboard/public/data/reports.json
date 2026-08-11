@@ -1,0 +1,200 @@
+{
+  "repositories": [
+    {
+      "branch": "main",
+      "jobs": [
+        {
+          "duration": "7s\n",
+          "error_log": null,
+          "name": "Custom Build\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "8s\n",
+          "error_log": null,
+          "name": "Custom Deploy\n",
+          "status": "success\n"
+        }
+      ],
+      "name": "vishuops0210/python-birla",
+      "status": "Success",
+      "timestamp": "2026-08-04T16:31:34Z",
+      "workflow": "Custom Deployment Pipeline"
+    },
+    {
+      "branch": "main",
+      "jobs": [
+        {
+          "duration": "10s\n",
+          "error_log": null,
+          "name": "python-ci / Secret Scanning (Gitleaks)\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "33s\n",
+          "error_log": null,
+          "name": "python-ci / Unit Tests & Coverage\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "10s\n",
+          "error_log": null,
+          "name": "python-ci / SCA (Trivy FS)\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "22s\n",
+          "error_log": "2026-08-04T16:32:14.7835968Z \u001b[36;1mif [[ ! \"$HOST_URL\" =~ ^https?:// ]]; then\u001b[0m\n2026-08-04T16:32:14.7836281Z \u001b[36;1m  HOST_URL=\"https://$HOST_URL\"\u001b[0m\n2026-08-04T16:32:14.7836551Z \u001b[36;1mfi\u001b[0m\n2026-08-04T16:32:14.7836868Z \u001b[36;1mecho \"### 📊 SonarQube Analysis Dashboard\" >> $GITHUB_STEP_SUMMARY\u001b[0m\n2026-08-04T16:32:14.7837445Z \u001b[36;1mecho \"You can view the detailed analysis for this project here:\" >> $GITHUB_STEP_SUMMARY\u001b[0m\n2026-08-04T16:32:14.7838371Z \u001b[36;1mecho \"🔗 **[View SonarQube Dashboard]($HOST_URL/dashboard?id=bajaj-demo-python)**\" >> $GITHUB_STEP_SUMMARY\u001b[0m\n2026-08-04T16:32:14.7884034Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}\n2026-08-04T16:32:14.7884391Z ##[endgroup]\n2026-08-04T16:32:14.7958665Z ##[end-action id=__vishuops0210_shared-repo.__run_3;outcome=success;conclusion=success;duration_ms=14]\n2026-08-04T16:32:14.8141959Z Post job cleanup.\n2026-08-04T16:32:14.8145180Z ##[start-action display=Cache SonarQube Scanner packages;id=__ccd131b9-9995-4e07-9c2e-c64661ed64f8.sonar-cache]\n2026-08-04T16:32:14.8147469Z ##[end-action id=__ccd131b9-9995-4e07-9c2e-c64661ed64f8.sonar-cache;outcome=skipped;conclusion=skipped;duration_ms=0]\n2026-08-04T16:32:14.8211594Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n2026-08-04T16:32:14.8212932Z Post job cleanup.\n2026-08-04T16:32:14.9065427Z [command]/usr/bin/git version\n2026-08-04T16:32:14.9110298Z git version 2.54.0\n2026-08-04T16:32:14.9155487Z Temporarily overriding HOME='/home/runner/work/_temp/1c6f1747-060b-4c50-bcf1-a3ca7c2df97c' before making global git config changes\n2026-08-04T16:32:14.9156817Z Adding repository directory to the temporary git global config as a safe directory\n2026-08-04T16:32:14.9161059Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/python-birla/python-birla\n2026-08-04T16:32:14.9198880Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-08-04T16:32:14.9237011Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-08-04T16:32:14.9472853Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-08-04T16:32:14.9605799Z http.https://github.com/.extraheader\n2026-08-04T16:32:14.9624303Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-08-04T16:32:14.9668396Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-08-04T16:32:14.9956590Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-08-04T16:32:14.9998962Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-08-04T16:32:15.0370845Z Cleaning up orphan processes\n2026-08-04T16:32:15.0725334Z Terminate orphan process: pid (2280) (dirmngr)\n2026-08-04T16:32:15.0828879Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4, actions/checkout@v4, actions/download-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+          "name": "python-ci / SAST (SonarQube)\n",
+          "status": "failure\n"
+        },
+        {
+          "duration": "40s\n",
+          "error_log": null,
+          "name": "python-ci / Build Docker Image\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "16s\n",
+          "error_log": null,
+          "name": "python-ci / Docker Image Size Check\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "27s\n",
+          "error_log": null,
+          "name": "python-ci / Trivy Image Scan\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "18s\n",
+          "error_log": "2026-08-04T16:34:00.8760629Z ##[endgroup]\n2026-08-04T16:34:00.8821035Z ##[start-action display=Login to Docker Hub;id=__vishuops0210_shared-repo.__docker_login-action]\n2026-08-04T16:34:00.8948247Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n2026-08-04T16:34:00.8951258Z ##[group]Run docker/login-action@v3\n2026-08-04T16:34:00.8951692Z with:\n2026-08-04T16:34:00.8952144Z   username: ***\n2026-08-04T16:34:00.8952593Z   password: ***\n2026-08-04T16:34:00.8952987Z   logout: true\n2026-08-04T16:34:00.8953333Z ##[endgroup]\n2026-08-04T16:34:01.2100401Z Logging into docker.io...\n2026-08-04T16:34:01.2122342Z (node:2156) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n2026-08-04T16:34:01.2123487Z (Use `node --trace-deprecation ...` to show where the warning was created)\n2026-08-04T16:34:01.3475496Z ##[error]Error response from daemon: Get \"https://registry-1.docker.io/v2/\": unauthorized: incorrect username or password\n2026-08-04T16:34:01.3574136Z ##[end-action id=__vishuops0210_shared-repo.__docker_login-action;outcome=failure;conclusion=failure;duration_ms=475]\n2026-08-04T16:34:01.3671703Z Post job cleanup.\n2026-08-04T16:34:01.3675259Z ##[start-action display=Login to Docker Hub;id=__517d0389-368a-4fd1-89d5-dbd2d15feaf5.__docker_login-action]\n2026-08-04T16:34:01.3706234Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n2026-08-04T16:34:01.3707447Z Post job cleanup.\n2026-08-04T16:34:01.6796967Z ##[group]Logout from docker.io\n2026-08-04T16:34:01.6814759Z (node:2177) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n2026-08-04T16:34:01.6816066Z (Use `node --trace-deprecation ...` to show where the warning was created)\n2026-08-04T16:34:01.6838267Z [command]/usr/bin/docker logout docker.io\n2026-08-04T16:34:01.6980858Z Removing login credentials for docker.io\n2026-08-04T16:34:01.7004711Z ##[endgroup]\n2026-08-04T16:34:01.7005644Z ##[group]Post cache\n2026-08-04T16:34:01.7006411Z State not set\n2026-08-04T16:34:01.7078720Z ##[endgroup]\n2026-08-04T16:34:01.7085734Z ##[end-action id=__517d0389-368a-4fd1-89d5-dbd2d15feaf5.__docker_login-action;outcome=success;conclusion=success;duration_ms=340]\n2026-08-04T16:34:01.7142415Z Cleaning up orphan processes\n2026-08-04T16:34:01.7506761Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/download-artifact@v4, docker/login-action@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+          "name": "python-ci / Push to Docker Hub\n",
+          "status": "failure\n"
+        },
+        {
+          "duration": "0s\n",
+          "error_log": null,
+          "name": "python-ci / Push to Amazon ECR\n",
+          "status": "skipped\n"
+        },
+        {
+          "duration": "\n",
+          "error_log": null,
+          "name": "python-ci / Publish Dashboard Report\n",
+          "status": "null\n"
+        },
+        {
+          "duration": "\n",
+          "error_log": null,
+          "name": "python-ci / Notify on Failure\n",
+          "status": "null\n"
+        }
+      ],
+      "name": "vishuops0210/python-birla",
+      "run_id": "30929505352",
+      "sha": "6ce0fadb604d59444cd2c57ef42f2222b226775a",
+      "status": "Failed",
+      "timestamp": "2026-08-04T16:34:15Z",
+      "workflow": "Python CI/CD Pipeline"
+    },
+    {
+      "branch": "main",
+      "jobs": [
+        {
+          "duration": "8s\n",
+          "error_log": null,
+          "name": "Custom Build\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "8s\n",
+          "error_log": null,
+          "name": "Custom Deploy\n",
+          "status": "success\n"
+        }
+      ],
+      "name": "vishuops0210/python-birla",
+      "status": "Success",
+      "timestamp": "2026-08-04T10:15:05Z",
+      "workflow": "Custom Deployment Pipeline"
+    },
+    {
+      "branch": "main",
+      "jobs": [
+        {
+          "duration": "9s\n",
+          "error_log": null,
+          "name": "python-ci / Secret Scanning (Gitleaks)\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "14s\n",
+          "error_log": "2026-08-04T10:15:02.2636054Z \u001b[36;1mif [[ ! \"$HOST_URL\" =~ ^https?:// ]]; then\u001b[0m\n2026-08-04T10:15:02.2636429Z \u001b[36;1m  HOST_URL=\"https://$HOST_URL\"\u001b[0m\n2026-08-04T10:15:02.2636717Z \u001b[36;1mfi\u001b[0m\n2026-08-04T10:15:02.2637046Z \u001b[36;1mecho \"### 📊 SonarQube Analysis Dashboard\" >> $GITHUB_STEP_SUMMARY\u001b[0m\n2026-08-04T10:15:02.2637623Z \u001b[36;1mecho \"You can view the detailed analysis for this project here:\" >> $GITHUB_STEP_SUMMARY\u001b[0m\n2026-08-04T10:15:02.2638242Z \u001b[36;1mecho \"🔗 **[View SonarQube Dashboard]($HOST_URL/dashboard?id=bajaj-demo-python)**\" >> $GITHUB_STEP_SUMMARY\u001b[0m\n2026-08-04T10:15:02.2667135Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}\n2026-08-04T10:15:02.2667555Z ##[endgroup]\n2026-08-04T10:15:02.2724606Z ##[end-action id=__vishuops0210_shared-repo.__run_3;outcome=success;conclusion=success;duration_ms=10]\n2026-08-04T10:15:02.2856924Z Post job cleanup.\n2026-08-04T10:15:02.2861430Z ##[start-action display=Cache SonarQube Scanner packages;id=__35d0be52-be96-4118-8619-f5bfac1ee9d8.sonar-cache]\n2026-08-04T10:15:02.2863929Z ##[end-action id=__35d0be52-be96-4118-8619-f5bfac1ee9d8.sonar-cache;outcome=skipped;conclusion=skipped;duration_ms=0]\n2026-08-04T10:15:02.2944111Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n2026-08-04T10:15:02.2945230Z Post job cleanup.\n2026-08-04T10:15:02.3681401Z [command]/usr/bin/git version\n2026-08-04T10:15:02.3701411Z git version 2.54.0\n2026-08-04T10:15:02.3733014Z Temporarily overriding HOME='/home/runner/work/_temp/a4472393-62b1-4c18-86f7-a3bce5ce4a91' before making global git config changes\n2026-08-04T10:15:02.3734226Z Adding repository directory to the temporary git global config as a safe directory\n2026-08-04T10:15:02.3736415Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/python-birla/python-birla\n2026-08-04T10:15:02.3772721Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-08-04T10:15:02.3801385Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-08-04T10:15:02.4006129Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-08-04T10:15:02.4026900Z http.https://github.com/.extraheader\n2026-08-04T10:15:02.4035769Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-08-04T10:15:02.4065026Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-08-04T10:15:02.4245238Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-08-04T10:15:02.4275141Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-08-04T10:15:02.4577022Z Cleaning up orphan processes\n2026-08-04T10:15:02.4820726Z Terminate orphan process: pid (2190) (dirmngr)\n2026-08-04T10:15:02.4856681Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4, actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n",
+          "name": "python-ci / SAST (SonarQube)\n",
+          "status": "failure\n"
+        },
+        {
+          "duration": "0s\n",
+          "error_log": null,
+          "name": "python-ci / Unit Tests & Coverage\n",
+          "status": "skipped\n"
+        },
+        {
+          "duration": "0s\n",
+          "error_log": null,
+          "name": "python-ci / SCA (Trivy FS)\n",
+          "status": "skipped\n"
+        },
+        {
+          "duration": "41s\n",
+          "error_log": null,
+          "name": "python-ci / Build Docker Image\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "23s\n",
+          "error_log": null,
+          "name": "python-ci / Docker Image Size Check\n",
+          "status": "success\n"
+        },
+        {
+          "duration": "0s\n",
+          "error_log": null,
+          "name": "python-ci / Trivy Image Scan\n",
+          "status": "skipped\n"
+        },
+        {
+          "duration": "0s\n",
+          "error_log": null,
+          "name": "python-ci / Push to Amazon ECR\n",
+          "status": "skipped\n"
+        },
+        {
+          "duration": "\n",
+          "error_log": null,
+          "name": "python-ci / Publish Dashboard Report\n",
+          "status": "null\n"
+        },
+        {
+          "duration": "0s\n",
+          "error_log": null,
+          "name": "python-ci / Push to Docker Hub\n",
+          "status": "skipped\n"
+        },
+        {
+          "duration": "0s\n",
+          "error_log": null,
+          "name": "python-ci / Notify on Failure\n",
+          "status": "skipped\n"
+        }
+      ],
+      "name": "vishuops0210/python-birla",
+      "run_id": "30899815645",
+      "sha": "efc266990f8a1f5beccea2ac24432d9271300a89",
+      "status": "Success",
+      "timestamp": "2026-08-04T10:16:33Z",
+      "workflow": "Python CI/CD Pipeline"
+    }
+  ]
+}
