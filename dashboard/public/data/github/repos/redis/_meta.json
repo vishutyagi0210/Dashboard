@@ -1,0 +1,51 @@
+{
+  "name": "redis",
+  "full_name": "OT-CONTAINER-KIT/redis",
+  "language": "Shell",
+  "default_branch": "master",
+  "last_synced": "2026-08-11T10:21:06.040978+00:00",
+  "insights": {
+    "open_issues": 10,
+    "open_prs": 9
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "drivebyer",
+      "commits": 31
+    },
+    {
+      "login": "iamabhishek-dubey",
+      "commits": 26
+    },
+    {
+      "login": "shubham-cmyk",
+      "commits": 17
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Auto Redis Version Check",
+      "file": ".github/workflows/auto-redis-version-check.yaml"
+    },
+    {
+      "name": "Docker Image CD",
+      "file": ".github/workflows/cd.yaml"
+    },
+    {
+      "name": "Docker Image CI",
+      "file": ".github/workflows/ci.yml"
+    },
+    {
+      "name": "Manual Docker Image Release",
+      "file": ".github/workflows/manual-release.yaml"
+    },
+    {
+      "name": "Shell scripts CI",
+      "file": ".github/workflows/shell-script.yml"
+    }
+  ]
+}

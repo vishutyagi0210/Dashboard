@@ -1,0 +1,26 @@
+{
+  "name": "restic",
+  "full_name": "OT-CONTAINER-KIT/restic",
+  "language": "Shell",
+  "default_branch": "master",
+  "last_synced": "2026-08-11T10:21:22.191494+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "sandy724",
+      "commits": 32
+    },
+    {
+      "login": "iamabhishek-dubey",
+      "commits": 11
+    }
+  ],
+  "workflows": []
+}

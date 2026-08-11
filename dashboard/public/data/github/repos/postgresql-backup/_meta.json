@@ -1,0 +1,26 @@
+{
+  "name": "postgresql-backup",
+  "full_name": "OT-CONTAINER-KIT/postgresql-backup",
+  "language": "Shell",
+  "default_branch": "main",
+  "last_synced": "2026-08-11T10:21:35.856173+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "sandy724",
+      "commits": 22
+    },
+    {
+      "login": "iamabhishek-dubey",
+      "commits": 1
+    }
+  ],
+  "workflows": []
+}

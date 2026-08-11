@@ -1,0 +1,22 @@
+{
+  "name": "k8s-vault-webhook",
+  "full_name": "OT-CONTAINER-KIT/k8s-vault-webhook",
+  "language": "Go",
+  "default_branch": "master",
+  "last_synced": "2026-08-11T10:21:52.049070+00:00",
+  "insights": {
+    "open_issues": 7,
+    "open_prs": 6
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "iamabhishek-dubey",
+      "commits": 46
+    }
+  ],
+  "workflows": []
+}
