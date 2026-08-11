@@ -41,6 +41,7 @@ def fetch_repositories():
                 "language": repo.get("language"),
                 "open_issues": repo.get("open_issues_count"), # GitHub returns PRs + Issues in this count
                 "url": repo.get("html_url")
+                
             })
             
         page += 1
