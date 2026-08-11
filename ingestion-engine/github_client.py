@@ -49,7 +49,6 @@ class GitHubClient:
                 backoff *= 2
         
         return None
-
     def get(self, endpoint, params=None):
         response = self._make_request("GET", endpoint, params)
         if not response or response.status_code == 204:
