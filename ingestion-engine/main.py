@@ -313,10 +313,10 @@ def main():
         },
         "self_hosted_runners": runners_summary,
         "dora_metrics": {
-            "deployment_frequency": {"value": dora_results.get("deployment_frequency", 0), "unit": "deploys/week", "trend": "stable"},
-            "change_failure_rate": {"value": dora_results.get("change_failure_rate", 0), "unit": "percent", "trend": "stable"},
-            "mttr": {"value": dora_results.get("mttr", 0), "unit": "minutes", "trend": "stable"},
-            "pr_cycle_time": {"value": 0, "unit": "hours", "trend": "stable"} # Stubbed for now
+            "deployment_frequency": dora_results.get("deployment_frequency", {}),
+            "change_failure_rate": dora_results.get("change_failure_rate", {}),
+            "mttr": dora_results.get("mttr", {}),
+            "pr_cycle_time": dora_results.get("pr_cycle_time", {})
         },
         "repos": overview_repos
     }
