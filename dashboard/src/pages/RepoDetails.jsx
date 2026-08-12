@@ -152,9 +152,16 @@ function RunCard({ run, isExpanded, onToggle }) {
         </div>
         
         <div className="mt-4 md:mt-0 flex items-center justify-between md:justify-end w-full md:w-auto space-x-6">
-          <div className="text-right">
+          <div className="text-right flex flex-col items-end">
             <p className="text-sm font-medium text-slate-300">{dateStr} at {timeStr}</p>
-            <p className="text-xs text-slate-500">Duration: {run.duration_seconds || 'N/A'}s</p>
+            <div className="flex space-x-3 mt-1">
+              <span className="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400 border border-white/5">
+                Run: {run.timing ? Math.round(run.timing.run_duration_ms / 1000) : 'N/A'}s
+              </span>
+              <span className="text-xs bg-blue-900/30 text-blue-300 px-2 py-1 rounded border border-blue-500/20 font-semibold flex items-center">
+                <Clock size={12} className="mr-1" /> {run.timing ? run.timing.billable_minutes : 0} min compute
+              </span>
+            </div>
           </div>
           <div className="text-slate-400">
             {isExpanded ? <ChevronUp /> : <ChevronDown />}
