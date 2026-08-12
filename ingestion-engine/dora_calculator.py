@@ -12,7 +12,7 @@ def calculate_dora_metrics(all_runs, prs_data=None):
     failed_runs = 0
     recent_successful_deploys = 0
     
-    
+
     # MTTR tracking
     recovery_times_minutes = []
     
@@ -49,6 +49,7 @@ def calculate_dora_metrics(all_runs, prs_data=None):
     change_failure_rate = (failed_runs / total_runs * 100) if total_runs > 0 else 0
     success_rate = (successful_runs / total_runs * 100) if total_runs > 0 else 0
     avg_mttr = (sum(recovery_times_minutes) / len(recovery_times_minutes)) if recovery_times_minutes else 0
+    
     
     # PR Cycle Time (Mocked for now until we fetch closed PRs)
     pr_cycle_time_hours = 0
