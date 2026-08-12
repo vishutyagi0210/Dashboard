@@ -1,11 +1,17 @@
 {
   "current": {
-    "api_calls_made": 28,
+    "api_calls_made": 25,
     "rate_limit": 5000,
-    "rate_limit_remaining": 4930,
-    "last_synced": "2026-08-12T10:34:10.029973+00:00"
+    "rate_limit_remaining": 4911,
+    "last_synced": "2026-08-12T10:37:54.833961+00:00"
   },
   "history": [
+    {
+      "api_calls_made": 25,
+      "rate_limit": 5000,
+      "rate_limit_remaining": 4911,
+      "last_synced": "2026-08-12T10:37:54.833961+00:00"
+    },
     {
       "api_calls_made": 28,
       "rate_limit": 5000,
