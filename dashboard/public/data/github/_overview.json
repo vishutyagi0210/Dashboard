@@ -1,17 +1,17 @@
 {
   "org": "vishutyagi0210",
   "provider": "github",
-  "last_synced": "2026-08-12T10:11:12.222986+00:00",
+  "last_synced": "2026-08-12T10:34:10.029727+00:00",
   "summary": {
     "total_repos": 4,
     "total_open_issues": 0,
     "total_open_prs": 0,
-    "overall_success_rate": 10.0
+    "overall_success_rate": 12.5
   },
   "self_hosted_runners": [],
   "dora_metrics": {
     "deployment_frequency": {
-      "value": 4,
+      "value": 5,
       "unit": "deploys/week",
       "trend": "stable"
     },
@@ -21,7 +21,7 @@
       "trend": "stable"
     },
     "mttr": {
-      "value": 9,
+      "value": 11,
       "unit": "minutes",
       "trend": "stable"
     },
@@ -35,9 +35,9 @@
     {
       "name": "Dashboard",
       "language": "JavaScript",
-      "last_run_status": "success",
-      "last_run_at": "2026-08-12T10:10:51Z",
-      "success_rate": 40.0,
+      "last_run_status": "failure",
+      "last_run_at": "2026-08-12T10:33:43Z",
+      "success_rate": 50.0,
       "open_issues": 0,
       "open_prs": 0
     },

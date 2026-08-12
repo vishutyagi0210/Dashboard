@@ -1,6 +1,22 @@
 {
-  "api_calls_made": 24,
-  "rate_limit": 5000,
-  "rate_limit_remaining": 4951,
-  "last_synced": "2026-08-12T10:11:12.223181+00:00"
+  "current": {
+    "api_calls_made": 28,
+    "rate_limit": 5000,
+    "rate_limit_remaining": 4930,
+    "last_synced": "2026-08-12T10:34:10.029973+00:00"
+  },
+  "history": [
+    {
+      "api_calls_made": 28,
+      "rate_limit": 5000,
+      "rate_limit_remaining": 4930,
+      "last_synced": "2026-08-12T10:34:10.029973+00:00"
+    },
+    {
+      "api_calls_made": 24,
+      "rate_limit": 5000,
+      "rate_limit_remaining": 4951,
+      "last_synced": "2026-08-12T10:11:12.223181+00:00"
+    }
+  ]
 }
