@@ -12,6 +12,7 @@ def calculate_dora_metrics(all_runs, prs_data=None):
     failed_runs = 0
     recent_successful_deploys = 0
     
+    
     # MTTR tracking
     recovery_times_minutes = []
     
