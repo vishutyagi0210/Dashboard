@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Clock, GitCommit, PlayCircle, CheckCircle, XCircle, ChevronDown, ChevronUp, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Clock, GitCommit, PlayCircle, CheckCircle, XCircle, ChevronDown, ChevronUp, AlertTriangle, Shield, ShieldAlert, TestTube, CheckSquare } from 'lucide-react';
 
 export default function RepoDetails() {
   const { repoName } = useParams();
@@ -148,6 +148,44 @@ function RunCard({ run, isExpanded, onToggle }) {
               <span>•</span>
               <span>ID: {run.run_id}</span>
             </div>
+            
+            {/* Artifact Badges */}
+            {run.artifacts && Object.keys(run.artifacts).length > 0 && (
+              <div className="flex items-center space-x-3 mt-3 flex-wrap gap-y-2">
+                
+                {/* Vulnerabilities (Trivy) */}
+                {run.artifacts.vulnerabilities && (
+                  <div className={`flex items-center space-x-1 px-2 py-1 rounded text-xs border font-medium ${run.artifacts.vulnerabilities.CRITICAL > 0 ? 'bg-red-500/10 text-red-400 border-red-500/30' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'}`}>
+                    {run.artifacts.vulnerabilities.CRITICAL > 0 ? <ShieldAlert size={14} /> : <Shield size={14} />}
+                    <span>{run.artifacts.vulnerabilities.CRITICAL} Crit / {run.artifacts.vulnerabilities.HIGH} High</span>
+                  </div>
+                )}
+                
+                {/* Secrets (Gitleaks) */}
+                {run.artifacts.secrets_found !== undefined && (
+                  <div className={`flex items-center space-x-1 px-2 py-1 rounded text-xs border font-medium ${run.artifacts.secrets_found > 0 ? 'bg-red-500/10 text-red-400 border-red-500/30' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'}`}>
+                    {run.artifacts.secrets_found > 0 ? <AlertTriangle size={14} /> : <Shield size={14} />}
+                    <span>{run.artifacts.secrets_found} Secrets</span>
+                  </div>
+                )}
+                
+                {/* Quality Gate (SonarQube) */}
+                {run.artifacts.quality_gate && (
+                  <div className={`flex items-center space-x-1 px-2 py-1 rounded text-xs border font-medium ${run.artifacts.quality_gate === 'OK' || run.artifacts.quality_gate === 'PASSED' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' : 'bg-red-500/10 text-red-400 border-red-500/30'}`}>
+                    <CheckSquare size={14} />
+                    <span>QG: {run.artifacts.quality_gate}</span>
+                  </div>
+                )}
+                
+                {/* Tests */}
+                {run.artifacts.has_tests && (
+                  <div className="flex items-center space-x-1 px-2 py-1 rounded text-xs border bg-blue-500/10 text-blue-400 border-blue-500/30 font-medium">
+                    <TestTube size={14} />
+                    <span>Tests Run</span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
         
