@@ -156,25 +156,13 @@ def fetch_repo_runs(client, owner, repo, repo_dir):
                 "billable_minutes": round(billable_minutes, 2)
             }
                 
-            # Fetch Artifacts (Smart Filter)
-            artifacts_list = client.get_paginated(f"/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
-            if artifacts_list is None:
-                artifacts_list = []
-            
-            for art in artifacts_list:
-                art_name = art.get("name", "").lower()
-                art_size = art.get("size_in_bytes", 0)
+            # Fetch Artifacts ONLY for the very latest pipeline (to save time)
+            if len(new_runs) == 0:
+                artifacts_list = client.get_paginated(f"/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+                if artifacts_list is None:
+                    artifacts_list = []
                 
-                # Smart Filter: < 50MB and matches keywords
-                if art_size < 50 * 1024 * 1024:
-                    keywords = ["sonar", "trivy", "gitleaks", "coverage", "test", "security", "sast", "dast", "sca", "report", "results"]
-                    if any(k in art_name for k in keywords):
-                        print(f"      Downloading artifact: {art_name} ({art_size} bytes)")
-                        download_url = art.get("archive_download_url")
-                        if download_url:
-                            art_bytes = client.get_binary(download_url)
-                            if art_bytes:
-                                parse_artifact_zip(art_bytes, art_name, run_entry["artifacts"])
+                run_entry["artifact_names"] = [art.get("name") for art in artifacts_list]
 
             new_runs.append(run_entry)
             
