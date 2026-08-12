@@ -1,0 +1,22 @@
+{
+  "name": "github-ci-cd-with-labs",
+  "full_name": "vishutyagi0210/github-ci-cd-with-labs",
+  "language": "Shell",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T11:29:04.175785+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "vishutyagi0210",
+      "commits": 3
+    }
+  ],
+  "workflows": []
+}
