@@ -9,6 +9,7 @@ def extract_error_snippet(log_text):
         return None
         
         
+
     # Remove ANSI escape sequences
     ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
     clean_text = ansi_escape.sub('', log_text)
