@@ -4,6 +4,101 @@
   "total_runs": 10,
   "runs": [
     {
+      "run_id": "31566172996",
+      "workflow": "Build and Push Ingestion Image",
+      "branch": "main",
+      "sha": "ddd9ad1",
+      "trigger": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-12T05:19:41Z",
+      "completed_at": "2026-08-12T05:20:14Z",
+      "jobs": [
+        {
+          "name": "build-and-push-image",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31565664653",
+      "workflow": "Deploy Dashboard to S3",
+      "branch": "main",
+      "sha": "920e297",
+      "trigger": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-12T05:10:24Z",
+      "completed_at": "2026-08-12T05:11:05Z",
+      "jobs": [
+        {
+          "name": "build-and-deploy",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31565624080",
+      "workflow": "Ingest DevOps Reports",
+      "branch": "main",
+      "sha": "d892713",
+      "trigger": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-12T05:09:43Z",
+      "completed_at": "2026-08-12T05:10:22Z",
+      "jobs": [
+        {
+          "name": "ingest-data",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31565590166",
+      "workflow": "Build and Push Ingestion Image",
+      "branch": "main",
+      "sha": "d892713",
+      "trigger": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-12T05:09:08Z",
+      "completed_at": "2026-08-12T05:09:41Z",
+      "jobs": [
+        {
+          "name": "build-and-push-image",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
+      "run_id": "31565182722",
+      "workflow": "Deploy Dashboard to S3",
+      "branch": "main",
+      "sha": "ed41dd0",
+      "trigger": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-12T05:01:48Z",
+      "completed_at": "2026-08-12T05:02:32Z",
+      "jobs": [
+        {
+          "name": "build-and-deploy",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {}
+    },
+    {
       "run_id": "31565103442",
       "workflow": "Deploy Dashboard to S3",
       "branch": "main",
@@ -86,101 +181,6 @@
       "jobs": [
         {
           "name": "build-and-push-image",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31564855853",
-      "workflow": "Deploy Dashboard to S3",
-      "branch": "main",
-      "sha": "112fb25",
-      "trigger": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-12T04:55:52Z",
-      "completed_at": "2026-08-12T04:56:29Z",
-      "jobs": [
-        {
-          "name": "build-and-deploy",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31564278510",
-      "workflow": "Deploy Dashboard to S3",
-      "branch": "main",
-      "sha": "199ffbd",
-      "trigger": "workflow_run",
-      "status": "completed",
-      "conclusion": "skipped",
-      "created_at": "2026-08-12T04:45:18Z",
-      "completed_at": "2026-08-12T04:45:19Z",
-      "jobs": [
-        {
-          "name": "build-and-deploy",
-          "status": "skipped",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31564276123",
-      "workflow": "Ingest DevOps Reports",
-      "branch": "main",
-      "sha": "199ffbd",
-      "trigger": "workflow_run",
-      "status": "completed",
-      "conclusion": "skipped",
-      "created_at": "2026-08-12T04:45:16Z",
-      "completed_at": "2026-08-12T04:45:17Z",
-      "jobs": [
-        {
-          "name": "ingest-data",
-          "status": "skipped",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31564229218",
-      "workflow": "Build and Push Ingestion Image",
-      "branch": "main",
-      "sha": "199ffbd",
-      "trigger": "push",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-08-12T04:44:24Z",
-      "completed_at": "2026-08-12T04:45:13Z",
-      "jobs": [
-        {
-          "name": "build-and-push-image",
-          "status": "failure",
-          "error_snippet": "2026-08-12T04:44:31.2887071Z ##[error]fatal: unable to access 'https://github.com/ot-central-team/Dashboard/': server certificate verification failed. CAfile: none CRLfile: none\n2026-08-12T04:44:31.2895831Z The process '/usr/bin/git' failed with exit code 128\n2026-08-12T04:44:31.2897565Z Waiting 19 seconds before trying again\n2026-08-12T04:44:50.2900982Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +199ffbdcf2e16c82bb6ac7c36369ce61a9e82787:refs/remotes/origin/main\n2026-08-12T04:44:50.3613323Z ##[error]fatal: unable to access 'https://github.com/ot-central-team/Dashboard/': server certificate verification failed. CAfile: none CRLfile: none\n2026-08-12T04:44:50.3630260Z The process '/usr/bin/git' failed with exit code 128\n2026-08-12T04:44:50.3631203Z Waiting 20 seconds before trying again\n2026-08-12T04:45:10.3708636Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +199ffbdcf2e16c82bb6ac7c36369ce61a9e82787:refs/remotes/origin/main\n2026-08-12T04:45:10.4403874Z ##[error]fatal: unable to access 'https://github.com/ot-central-team/Dashboard/': server certificate verification failed. CAfile: none CRLfile: none\n2026-08-12T04:45:10.4460998Z ##[error]The process '/usr/bin/git' failed with exit code 128"
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31553447030",
-      "workflow": "Deploy Dashboard to S3",
-      "branch": "main",
-      "sha": "b392463",
-      "trigger": "workflow_run",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-12T01:23:39Z",
-      "completed_at": "2026-08-12T01:24:09Z",
-      "jobs": [
-        {
-          "name": "build-and-deploy",
           "status": "success",
           "error_snippet": null
         }
