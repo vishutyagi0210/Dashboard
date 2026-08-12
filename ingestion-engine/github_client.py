@@ -19,6 +19,7 @@ class GitHubClient:
         backoff = 2
 
         while retries <= max_retries:
+            response = None
             try:
                 response = requests.request(method, url, headers=self.headers, params=params, timeout=30)
                 
