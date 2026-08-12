@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Server, Shield, Settings, GitPullRequest } from 'lucide-react';
+import { LayoutDashboard, Server, Shield, Settings, GitPullRequest, Activity } from 'lucide-react';
 
 export default function Sidebar() {
   const navItems = [
     { name: 'Overview', path: '/', icon: <LayoutDashboard size={20} /> },
-    { name: 'Security', path: '/#', icon: <Shield size={20} /> },
-    { name: 'Infrastructure', path: '/#', icon: <Server size={20} /> },
     { name: 'Pipelines', path: '/#', icon: <GitPullRequest size={20} /> },
+    { name: 'Telemetry', path: '/telemetry', icon: <Activity size={20} /> },
+    { name: 'Infrastructure', path: '/#', icon: <Server size={20} /> },
+    { name: 'Security', path: '/#', icon: <Shield size={20} /> },
     { name: 'Settings', path: '/#', icon: <Settings size={20} /> },
   ];
 
