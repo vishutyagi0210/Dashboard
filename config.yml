@@ -1,0 +1,21 @@
+organization: "ot-central-team"
+
+# Global defaults for all repositories
+defaults:
+  history_depth: 5
+  fetch_cache: true
+  fetch_contributors: true
+  fetch_issues_prs: true
+
+# List repositories specifically. If "repositories" is empty or omitted, it fetches ALL repos in the org using the defaults.
+# If you list repositories here, it will ONLY fetch these repositories.
+repositories:
+  - name: "Dashboard"
+    history_depth: 10
+    fetch_cache: true
+    fetch_contributors: true
+  - name: "k8s-accelerator"
+    fetch_cache: false
+    fetch_contributors: false
+  - name: "ci-jenkins-shared-libraries"
+    history_depth: 3

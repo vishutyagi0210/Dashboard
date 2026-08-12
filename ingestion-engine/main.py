@@ -2,62 +2,76 @@ import os
 import json
 from datetime import datetime, timezone
 
+import yaml
+
 from github_client import GitHubClient
 from log_analyzer import extract_error_snippet
 from dora_calculator import calculate_dora_metrics
 
 
 # Configuration
-ORG_NAME = os.environ.get("ORG_NAME", "ot-central-team")
 GH_TOKEN = os.environ.get("GH_TOKEN")
 OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "/app/data")
-HISTORY_DEPTH = int(os.environ.get("HISTORY_DEPTH", "10"))
+CONFIG_PATH = os.environ.get("CONFIG_PATH", "/app/config.yml")
 
-def fetch_repo_meta(client, owner, repo):
+def load_config():
+    if os.path.exists(CONFIG_PATH):
+        with open(CONFIG_PATH, "r") as f:
+            return yaml.safe_load(f)
+    return {
+        "organization": os.environ.get("ORG_NAME", "ot-central-team"),
+        "defaults": {
+            "history_depth": 5,
+            "fetch_cache": True,
+            "fetch_contributors": True,
+            "fetch_issues_prs": True
+        },
+        "repositories": []
+    }
+
+def fetch_repo_meta(client, repo_obj, config):
+    repo = repo_obj["name"]
+    owner = repo_obj.get("owner", {}).get("login", "")
     print(f"  Fetching meta for {repo}...")
     
-    # Open PRs
-    prs = client.get_paginated(f"/repos/{owner}/{repo}/pulls?state=open")
-    pr_count = len(prs) if prs else 0
+    pr_count = 0
+    if config.get("fetch_issues_prs", True):
+        # We only need count, so limit per_page=1 to minimize load if there are many PRs
+        prs = client.get_paginated(f"/repos/{owner}/{repo}/pulls?state=open&per_page=100")
+        pr_count = len(prs) if prs else 0
     
     # Issues
-    repo_info = client.get(f"/repos/{owner}/{repo}")
-    total_issues_and_prs = repo_info.get("open_issues_count", 0) if repo_info else 0
+    total_issues_and_prs = repo_obj.get("open_issues_count", 0)
     issue_count = max(0, total_issues_and_prs - pr_count)
     
     # Cache usage
-    cache_info = client.get(f"/repos/{owner}/{repo}/actions/cache/usage")
     cache_size_mb = 0
     cache_count = 0
-    if cache_info:
-        cache_size_mb = cache_info.get("active_caches_size_in_bytes", 0) / (1024 * 1024)
-        cache_count = cache_info.get("active_caches_count", 0)
+    if config.get("fetch_cache", True):
+        cache_info = client.get(f"/repos/{owner}/{repo}/actions/cache/usage")
+        if cache_info:
+            cache_size_mb = cache_info.get("active_caches_size_in_bytes", 0) / (1024 * 1024)
+            cache_count = cache_info.get("active_caches_count", 0)
         
     # Contributors
-    contributors = client.get_paginated(f"/repos/{owner}/{repo}/contributors")
     top_contributors = []
-    if contributors:
-        for c in contributors[:3]:
-            top_contributors.append({
-                "login": c.get("login"),
-                "commits": c.get("contributions")
-            })
+    if config.get("fetch_contributors", True):
+        contributors = client.get_paginated(f"/repos/{owner}/{repo}/contributors")
+        if contributors:
+            for c in contributors[:3]:
+                top_contributors.append({
+                    "login": c.get("login"),
+                    "commits": c.get("contributions")
+                })
             
-    # Workflows
-    workflows_data = client.get_paginated(f"/repos/{owner}/{repo}/actions/workflows")
+    # Workflows (Removed to save API calls, not used in UI)
     workflows = []
-    if workflows_data:
-        for w in workflows_data:
-            workflows.append({
-                "name": w.get("name"),
-                "file": w.get("path")
-            })
             
     meta = {
         "name": repo,
         "full_name": f"{owner}/{repo}",
-        "language": repo_info.get("language") if repo_info else "Unknown",
-        "default_branch": repo_info.get("default_branch", "main") if repo_info else "main",
+        "language": repo_obj.get("language") or "Unknown",
+        "default_branch": repo_obj.get("default_branch", "main"),
         "last_synced": datetime.now(timezone.utc).isoformat(),
         "insights": {
             "open_issues": issue_count,
@@ -72,8 +86,9 @@ def fetch_repo_meta(client, owner, repo):
     }
     return meta
 
-def fetch_repo_runs(client, owner, repo, repo_dir):
+def fetch_repo_runs(client, owner, repo, repo_dir, config):
     print(f"  Fetching runs for {repo}...")
+    history_depth = config.get("history_depth", 5)
     runs_file = os.path.join(repo_dir, "_runs.json")
     existing_runs = []
     
@@ -91,7 +106,7 @@ def fetch_repo_runs(client, owner, repo, repo_dir):
     page = 1
     
     while True:
-        runs_data = client.get(f"/repos/{owner}/{repo}/actions/runs?per_page={HISTORY_DEPTH}&page={page}")
+        runs_data = client.get(f"/repos/{owner}/{repo}/actions/runs?per_page={history_depth}&page={page}")
         if not runs_data or "workflow_runs" not in runs_data:
             break
             
@@ -156,18 +171,18 @@ def fetch_repo_runs(client, owner, repo, repo_dir):
                 
             new_runs.append(run_entry)
             
-        if found_existing or len(new_runs) >= HISTORY_DEPTH:
+        if found_existing or len(new_runs) >= history_depth:
             break
             
         page += 1
         
     # Merge and trim
     all_runs = new_runs + existing_runs
-    all_runs = all_runs[:HISTORY_DEPTH]
+    all_runs = all_runs[:history_depth]
     
     runs_data = {
         "repo": repo,
-        "history_depth": HISTORY_DEPTH,
+        "history_depth": history_depth,
         "total_runs": len(all_runs),
         "runs": all_runs
     }
@@ -178,14 +193,16 @@ def fetch_repo_runs(client, owner, repo, repo_dir):
     return all_runs
 
 def main():
-    print(f"Starting Data Ingestion Engine for {ORG_NAME}...")
+    cfg = load_config()
+    org_name = cfg.get("organization", "ot-central-team")
+    print(f"Starting Data Ingestion Engine for {org_name}...")
     client = GitHubClient(GH_TOKEN)
     
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
     # 0. Fetch self-hosted runners
-    print(f"\nFetching Self-Hosted Runners for {ORG_NAME}...")
-    runners_data = client.get_paginated(f"/orgs/{ORG_NAME}/actions/runners")
+    print(f"\nFetching Self-Hosted Runners for {org_name}...")
+    runners_data = client.get_paginated(f"/orgs/{org_name}/actions/runners")
     runners_summary = []
     if runners_data:
         for r in runners_data:
@@ -197,27 +214,45 @@ def main():
             })
     
     # 1. Fetch all repos
-    repos_data = client.get_paginated(f"/orgs/{ORG_NAME}/repos")
+    repos_data = client.get_paginated(f"/orgs/{org_name}/repos")
     if repos_data is None:
         repos_data = []
+        
+    # Handle repo filtering
+    target_repos = cfg.get("repositories", [])
+    target_repo_names = [r["name"] for r in target_repos] if target_repos else []
     
     overview_repos = []
     
     for repo_obj in repos_data:
         repo_name = repo_obj.get("name")
+        
+        # Check if we should process this repo
+        if target_repo_names and repo_name not in target_repo_names:
+            continue
+            
+        # Get specific config for this repo
+        repo_config = cfg.get("defaults", {}).copy()
+        for r in target_repos:
+            if r["name"] == repo_name:
+                repo_config.update(r)
+                break
+                
         print(f"\nProcessing Repository: {repo_name}")
         
         # Create repo directory structure
         repo_dir = os.path.join(OUTPUT_DIR, "github", "repos", repo_name)
         os.makedirs(repo_dir, exist_ok=True)
         
+        repo_obj["owner"] = {"login": org_name}
+        
         # Fetch meta
-        meta = fetch_repo_meta(client, ORG_NAME, repo_name)
+        meta = fetch_repo_meta(client, repo_obj, repo_config)
         with open(os.path.join(repo_dir, "_meta.json"), "w") as f:
             json.dump(meta, f, indent=2)
             
         # Fetch runs (Rolling Window)
-        runs = fetch_repo_runs(client, ORG_NAME, repo_name, repo_dir)
+        runs = fetch_repo_runs(client, org_name, repo_name, repo_dir, repo_config)
         
         # Determine last run status for overview
         last_run_status = runs[0]["conclusion"] if runs else "unknown"
@@ -258,30 +293,39 @@ def main():
     dora_results = calculate_dora_metrics(all_runs_flat)
     
     overview_data = {
-        "org": ORG_NAME,
+        "org": org_name,
         "provider": "github",
         "last_synced": datetime.now(timezone.utc).isoformat(),
         "summary": {
-            "total_repos": len(repos_data),
+            "total_repos": len(overview_repos),
             "total_open_issues": sum(r["open_issues"] for r in overview_repos),
             "total_open_prs": sum(r["open_prs"] for r in overview_repos),
-            "overall_success_rate": dora_results["overall_success_rate"]
+            "overall_success_rate": round(sum(r["success_rate"] for r in overview_repos) / len(overview_repos), 1) if len(overview_repos) > 0 else 0
         },
         "self_hosted_runners": runners_summary,
         "dora_metrics": {
-            "deployment_frequency": dora_results["deployment_frequency"],
-            "change_failure_rate": dora_results["change_failure_rate"],
-            "mttr": dora_results["mttr"],
-            "pr_cycle_time": dora_results["pr_cycle_time"]
+            "deployment_frequency": {"value": dora_results.get("deployment_frequency", 0), "unit": "deploys/week", "trend": "stable"},
+            "change_failure_rate": {"value": dora_results.get("change_failure_rate", 0), "unit": "percent", "trend": "stable"},
+            "mttr": {"value": dora_results.get("mttr", 0), "unit": "minutes", "trend": "stable"},
+            "pr_cycle_time": {"value": 0, "unit": "hours", "trend": "stable"} # Stubbed for now
         },
         "repos": overview_repos
     }
     
-    overview_path = os.path.join(OUTPUT_DIR, "github", "_overview.json")
-    with open(overview_path, "w") as f:
+    with open(os.path.join(OUTPUT_DIR, "github", "_overview.json"), "w") as f:
         json.dump(overview_data, f, indent=2)
         
+    api_usage_data = {
+        "api_calls_made": client.api_calls_made,
+        "rate_limit": client.rate_limit,
+        "rate_limit_remaining": client.rate_limit_remaining,
+        "last_synced": datetime.now(timezone.utc).isoformat()
+    }
+    with open(os.path.join(OUTPUT_DIR, "github", "_api_usage.json"), "w") as f:
+        json.dump(api_usage_data, f, indent=2)
+        
     print(f"\nIngestion Complete! Data written to {OUTPUT_DIR}")
+    print(f"API Calls Used: {client.api_calls_made} | Remaining Quota: {client.rate_limit_remaining}")
 
 if __name__ == "__main__":
     main()

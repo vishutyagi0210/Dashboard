@@ -12,6 +12,9 @@ class GitHubClient:
             "Authorization": f"Bearer {token.strip()}" if token else "",
             "X-GitHub-Api-Version": "2022-11-28"
         }
+        self.api_calls_made = 0
+        self.rate_limit = 5000
+        self.rate_limit_remaining = 5000
 
     def _make_request(self, method, endpoint, params=None, max_retries=3):
         url = f"{self.base_url}{endpoint}" if not endpoint.startswith("http") else endpoint
@@ -22,6 +25,12 @@ class GitHubClient:
             response = None
             try:
                 response = requests.request(method, url, headers=self.headers, params=params, timeout=30)
+                self.api_calls_made += 1
+                
+                if "X-RateLimit-Limit" in response.headers:
+                    self.rate_limit = int(response.headers["X-RateLimit-Limit"])
+                if "X-RateLimit-Remaining" in response.headers:
+                    self.rate_limit_remaining = int(response.headers["X-RateLimit-Remaining"])
                 
                 # Handle rate limits
                 if response.status_code == 403 and "X-RateLimit-Reset" in response.headers:

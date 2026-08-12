@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "Pulling Python Docker image and running ingestion..."
           REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-          docker run --rm -e PYTHONUNBUFFERED=1 -e GH_TOKEN -e ORG_NAME -v ${{ github.workspace }}/dashboard/public/data:/app/data ghcr.io/${REPO_OWNER}/dashboard-ingestion-engine:latest || true
+          docker run --rm -e PYTHONUNBUFFERED=1 -e GH_TOKEN -e ORG_NAME -v ${{ github.workspace }}/config.yml:/app/config.yml -v ${{ github.workspace }}/dashboard/public/data:/app/data ghcr.io/${REPO_OWNER}/dashboard-ingestion-engine:latest || true
           echo "Data gathered and written to dashboard/public/data/"
 
       - name: Commit and Push Changes
