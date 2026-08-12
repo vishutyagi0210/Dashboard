@@ -26,12 +26,12 @@ def fetch_repo_meta(client, owner, repo):
     issue_count = max(0, total_issues_and_prs - pr_count)
     
     # Cache usage
-    cache_info = client.get(f"/repos/{owner}/{repo}/actions/caches")
+    cache_info = client.get(f"/repos/{owner}/{repo}/actions/cache/usage")
     cache_size_mb = 0
     cache_count = 0
     if cache_info:
-        cache_size_mb = cache_info.get("total_active_caches_size_in_bytes", 0) / (1024 * 1024)
-        cache_count = cache_info.get("total_active_caches_count", 0)
+        cache_size_mb = cache_info.get("active_caches_size_in_bytes", 0) / (1024 * 1024)
+        cache_count = cache_info.get("active_caches_count", 0)
         
     # Contributors
     contributors = client.get_paginated(f"/repos/{owner}/{repo}/contributors")
