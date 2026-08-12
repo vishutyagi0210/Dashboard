@@ -324,13 +324,35 @@ def main():
     with open(os.path.join(OUTPUT_DIR, "github", "_overview.json"), "w") as f:
         json.dump(overview_data, f, indent=2)
         
-    api_usage_data = {
+    api_usage_path = os.path.join(OUTPUT_DIR, "github", "_api_usage.json")
+    existing_history = []
+    if os.path.exists(api_usage_path):
+        try:
+            with open(api_usage_path, "r") as f:
+                old_data = json.load(f)
+                existing_history = old_data.get("history", [])
+                # Handle migration from old flat schema
+                if "history" not in old_data and "api_calls_made" in old_data:
+                    existing_history.insert(0, old_data)
+        except:
+            pass
+            
+    current_run = {
         "api_calls_made": client.api_calls_made,
         "rate_limit": client.rate_limit,
         "rate_limit_remaining": client.rate_limit_remaining,
         "last_synced": datetime.now(timezone.utc).isoformat()
     }
-    with open(os.path.join(OUTPUT_DIR, "github", "_api_usage.json"), "w") as f:
+    
+    existing_history.insert(0, current_run)
+    existing_history = existing_history[:50] # Keep last 50 runs
+    
+    api_usage_data = {
+        "current": current_run,
+        "history": existing_history
+    }
+    
+    with open(api_usage_path, "w") as f:
         json.dump(api_usage_data, f, indent=2)
         
     print(f"\nIngestion Complete! Data written to {OUTPUT_DIR}")

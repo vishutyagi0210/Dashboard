@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Zap, Database, Server } from 'lucide-react';
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts';
 
 export default function ApiTelemetry() {
   const [apiData, setApiData] = useState(null);
@@ -11,7 +11,12 @@ export default function ApiTelemetry() {
     fetch(`${import.meta.env.BASE_URL}data/github/_api_usage.json`)
       .then(res => res.json())
       .then(json => {
-        setApiData(json);
+        // Handle migration from old flat schema to new nested schema
+        if (json.current) {
+          setApiData(json);
+        } else {
+          setApiData({ current: json, history: [json] });
+        }
         setLoading(false);
       })
       .catch(err => {
@@ -23,14 +28,24 @@ export default function ApiTelemetry() {
   if (loading) return <div className="flex min-h-screen items-center justify-center text-white">Loading Telemetry...</div>;
   if (!apiData) return <div className="flex min-h-screen items-center justify-center text-white">Failed to load API Telemetry. (Has the ingestion engine run?)</div>;
 
-  const used = apiData.rate_limit - apiData.rate_limit_remaining;
-  const remaining = apiData.rate_limit_remaining;
+  const currentRun = apiData.current;
+  const history = apiData.history.slice().reverse(); // reverse to chronological order for charts
+
+  const used = currentRun.rate_limit - currentRun.rate_limit_remaining;
+  const remaining = currentRun.rate_limit_remaining;
   
   const chartData = [
     { name: 'Used Quota', value: used },
     { name: 'Remaining Quota', value: remaining }
   ];
   
+  const historyData = history.map((h, i) => ({
+    name: `Run ${i + 1}`,
+    calls: h.api_calls_made,
+    remaining: h.rate_limit_remaining,
+    time: new Date(h.last_synced).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+  }));
+
   const COLORS = ['#f43f5e', '#3b82f6'];
 
   return (
@@ -39,7 +54,7 @@ export default function ApiTelemetry() {
         <h1 className="text-4xl font-extrabold mb-2 text-white tracking-tight flex items-center">
           <Activity className="mr-3 text-blue-500" size={36} /> API Telemetry
         </h1>
-        <p className="text-lg text-slate-400 font-light">Monitor your exact GitHub API footprint and modular config costs.</p>
+        <p className="text-lg text-slate-400 font-light">Monitor your exact GitHub API footprint and historical run costs.</p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -48,8 +63,8 @@ export default function ApiTelemetry() {
             <Zap className="text-yellow-400" size={24} />
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400">Last Run Cost</h3>
           </div>
-          <p className="text-4xl font-extrabold text-white">{apiData.api_calls_made}</p>
-          <p className="text-xs text-slate-500 mt-2">Requests consumed by the ingestion engine.</p>
+          <p className="text-4xl font-extrabold text-white">{currentRun.api_calls_made}</p>
+          <p className="text-xs text-slate-500 mt-2">Requests consumed by the most recent engine run.</p>
         </div>
 
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-xl flex flex-col justify-center">
@@ -57,7 +72,7 @@ export default function ApiTelemetry() {
             <Database className="text-blue-400" size={24} />
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400">Hourly Quota</h3>
           </div>
-          <p className="text-4xl font-extrabold text-white">{apiData.rate_limit}</p>
+          <p className="text-4xl font-extrabold text-white">{currentRun.rate_limit}</p>
           <p className="text-xs text-slate-500 mt-2">Maximum requests per hour (Free Tier = 5000).</p>
         </div>
 
@@ -66,12 +81,31 @@ export default function ApiTelemetry() {
             <Server className="text-emerald-400" size={24} />
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400">Remaining</h3>
           </div>
-          <p className="text-4xl font-extrabold text-white">{apiData.rate_limit_remaining}</p>
+          <p className="text-4xl font-extrabold text-white">{currentRun.rate_limit_remaining}</p>
           <p className="text-xs text-slate-500 mt-2">Live remaining quota until reset window.</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+        <div className="lg:col-span-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+          <h3 className="text-lg font-semibold mb-6">Historical Run Costs</h3>
+          <div className="w-full h-72">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={historyData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                <XAxis dataKey="time" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
+                <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
+                <Tooltip 
+                  contentStyle={{ backgroundColor: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', color: '#fff' }}
+                  itemStyle={{ color: '#fff' }}
+                />
+                <Line type="monotone" dataKey="calls" stroke="#3b82f6" strokeWidth={3} dot={{ r: 4, fill: '#3b82f6', strokeWidth: 2, stroke: '#1e293b' }} activeDot={{ r: 6 }} name="API Calls Consumed" />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+          <p className="text-xs text-slate-400 text-center mt-4">Tracks the API footprint of the last 50 ingestion executions.</p>
+        </div>
+
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl flex flex-col items-center">
           <h3 className="text-lg font-semibold self-start mb-4">Live Quota Usage</h3>
           <div className="w-64 h-64 relative">
@@ -98,13 +132,13 @@ export default function ApiTelemetry() {
               </PieChart>
             </ResponsiveContainer>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-              <span className="block text-3xl font-bold">{Math.round((used / apiData.rate_limit) * 100)}%</span>
+              <span className="block text-3xl font-bold">{Math.round((used / currentRun.rate_limit) * 100)}%</span>
               <span className="text-xs text-slate-400">Utilized</span>
             </div>
           </div>
         </div>
-        
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+
+        <div className="lg:col-span-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
           <h3 className="text-lg font-semibold mb-4">Modular Configuration Cost</h3>
           <p className="text-sm text-slate-400 mb-6 leading-relaxed">
             By leveraging the <code className="bg-slate-900 px-1 py-0.5 rounded text-blue-300">config.yml</code> at the root of the repository, you can finely control the API footprint.
