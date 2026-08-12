@@ -15,6 +15,7 @@ class GitHubClient:
 
         
         self.api_calls_made = 0
+        self.call_log = []
         self.rate_limit = 5000
         self.rate_limit_remaining = 5000
 
@@ -28,6 +29,7 @@ class GitHubClient:
             try:
                 response = requests.request(method, url, headers=self.headers, params=params, timeout=30)
                 self.api_calls_made += 1
+                self.call_log.append(f"{method} {endpoint}")
                 
                 if "X-RateLimit-Limit" in response.headers:
                     self.rate_limit = int(response.headers["X-RateLimit-Limit"])

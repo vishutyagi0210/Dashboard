@@ -162,6 +162,25 @@ export default function ApiTelemetry() {
           </ul>
         </div>
       </div>
+
+      {currentRun.call_log && currentRun.call_log.length > 0 && (
+        <div className="bg-slate-900 border border-slate-700 rounded-2xl p-6 shadow-2xl font-mono text-xs overflow-hidden">
+          <div className="flex items-center space-x-2 mb-4 pb-4 border-b border-slate-700">
+            <div className="w-3 h-3 rounded-full bg-rose-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+            <span className="ml-4 text-slate-400 font-sans text-sm font-semibold tracking-wide">Execution Receipt (Latest Run)</span>
+          </div>
+          <div className="max-h-96 overflow-y-auto space-y-2 text-emerald-400 pr-4 custom-scrollbar">
+            {currentRun.call_log.map((log, index) => (
+              <div key={index} className="flex">
+                <span className="text-slate-600 mr-4 w-6 text-right select-none">{index + 1}</span>
+                <span className="break-all">{log}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

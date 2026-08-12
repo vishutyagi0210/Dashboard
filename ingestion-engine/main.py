@@ -339,6 +339,7 @@ def main():
             
     current_run = {
         "api_calls_made": client.api_calls_made,
+        "call_log": getattr(client, 'call_log', []),
         "rate_limit": client.rate_limit,
         "rate_limit_remaining": client.rate_limit_remaining,
         "last_synced": datetime.now(timezone.utc).isoformat()
