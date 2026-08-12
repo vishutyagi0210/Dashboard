@@ -18,6 +18,7 @@ class GitHubClient:
         self.rate_limit = 5000
         self.rate_limit_remaining = 5000
 
+
     def _make_request(self, method, endpoint, params=None, max_retries=3):
         url = f"{self.base_url}{endpoint}" if not endpoint.startswith("http") else endpoint
         retries = 0
