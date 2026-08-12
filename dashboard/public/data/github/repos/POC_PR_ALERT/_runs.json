@@ -1,7 +1,7 @@
 {
   "repo": "POC_PR_ALERT",
-  "history_depth": 10,
-  "total_runs": 10,
+  "history_depth": 5,
+  "total_runs": 5,
   "runs": [
     {
       "run_id": "31298354310",
@@ -94,101 +94,6 @@
           "name": "check-pr-size",
           "status": "failure",
           "error_snippet": "2026-08-08T20:25:55.7498927Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-08-08T20:25:55.7535608Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-08-08T20:25:55.7806660Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-08-08T20:25:55.7836864Z http.https://github.com/.extraheader\n2026-08-08T20:25:55.7855515Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-08-08T20:25:55.7897226Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-08-08T20:25:55.8158325Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-08-08T20:25:55.8195389Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-08-08T20:25:55.8585101Z Cleaning up orphan processes\n2026-08-08T20:25:55.8887762Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31276746790",
-      "workflow": "PR Size Alert",
-      "branch": "independent",
-      "sha": "2bbbf30",
-      "trigger": "pull_request",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-08-08T20:22:27Z",
-      "completed_at": "2026-08-08T20:22:46Z",
-      "jobs": [
-        {
-          "name": "check-pr-size",
-          "status": "failure",
-          "error_snippet": "2026-08-08T20:22:41.8636557Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-08-08T20:22:41.8658315Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-08-08T20:22:41.8947625Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-08-08T20:22:41.8993736Z http.https://github.com/.extraheader\n2026-08-08T20:22:41.9008468Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-08-08T20:22:41.9067655Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-08-08T20:22:41.9336449Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-08-08T20:22:41.9403029Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-08-08T20:22:41.9815162Z Cleaning up orphan processes\n2026-08-08T20:22:42.0206528Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31276519708",
-      "workflow": "PR Size Alert",
-      "branch": "independent",
-      "sha": "850a88d",
-      "trigger": "pull_request",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-08-08T20:16:46Z",
-      "completed_at": "2026-08-08T20:16:56Z",
-      "jobs": [
-        {
-          "name": "check-pr-size",
-          "status": "failure",
-          "error_snippet": "2026-08-08T20:16:52.4034063Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-08-08T20:16:52.4072837Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-08-08T20:16:52.4331056Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-08-08T20:16:52.4378518Z http.https://github.com/.extraheader\n2026-08-08T20:16:52.4393239Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-08-08T20:16:52.4428491Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-08-08T20:16:52.4676617Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-08-08T20:16:52.4723489Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-08-08T20:16:52.5122301Z Cleaning up orphan processes\n2026-08-08T20:16:52.5440430Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31276438701",
-      "workflow": "PR Size Alert",
-      "branch": "independent",
-      "sha": "84c6800",
-      "trigger": "pull_request",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-08T20:14:53Z",
-      "completed_at": "2026-08-08T20:15:04Z",
-      "jobs": [
-        {
-          "name": "check-pr-size",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31276375620",
-      "workflow": "PR Size Alert",
-      "branch": "independent",
-      "sha": "a212571",
-      "trigger": "pull_request",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-08T20:13:22Z",
-      "completed_at": "2026-08-08T20:13:38Z",
-      "jobs": [
-        {
-          "name": "check-pr-size",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {}
-    },
-    {
-      "run_id": "31276310001",
-      "workflow": "PR Size Alert",
-      "branch": "independent",
-      "sha": "2fc6750",
-      "trigger": "pull_request",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-08T20:11:47Z",
-      "completed_at": "2026-08-08T20:11:55Z",
-      "jobs": [
-        {
-          "name": "check-pr-size",
-          "status": "success",
-          "error_snippet": null
         }
       ],
       "artifacts": {}

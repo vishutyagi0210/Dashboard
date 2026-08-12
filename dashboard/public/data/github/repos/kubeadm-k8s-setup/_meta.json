@@ -1,9 +1,9 @@
 {
-  "name": "POC_PR_ALERT",
-  "full_name": "vishutyagi0210/POC_PR_ALERT",
-  "language": "Python",
+  "name": "kubeadm-k8s-setup",
+  "full_name": "vishutyagi0210/kubeadm-k8s-setup",
+  "language": "Unknown",
   "default_branch": "main",
-  "last_synced": "2026-08-12T09:40:13.850633+00:00",
+  "last_synced": "2026-08-12T09:40:12.858539+00:00",
   "insights": {
     "open_issues": 0,
     "open_prs": 0
@@ -15,7 +15,7 @@
   "top_contributors": [
     {
       "login": "vishutyagi0210",
-      "commits": 5
+      "commits": 1
     }
   ],
   "workflows": []

@@ -1,9 +1,9 @@
 {
-  "name": "POC_PR_ALERT",
-  "full_name": "vishutyagi0210/POC_PR_ALERT",
-  "language": "Python",
+  "name": "github-ci-cd-with-labs",
+  "full_name": "vishutyagi0210/github-ci-cd-with-labs",
+  "language": "Shell",
   "default_branch": "main",
-  "last_synced": "2026-08-12T09:40:13.850633+00:00",
+  "last_synced": "2026-08-12T09:40:11.902505+00:00",
   "insights": {
     "open_issues": 0,
     "open_prs": 0
@@ -15,7 +15,7 @@
   "top_contributors": [
     {
       "login": "vishutyagi0210",
-      "commits": 5
+      "commits": 3
     }
   ],
   "workflows": []
