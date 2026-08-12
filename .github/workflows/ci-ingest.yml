@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        env:
+          GIT_SSL_NO_VERIFY: "true"
 
       - name: Log in to the Container registry
         uses: docker/login-action@v3
