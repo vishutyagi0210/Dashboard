@@ -11,6 +11,7 @@ def parse_artifact_zip(artifact_bytes, artifact_name, run_artifacts):
         with zipfile.ZipFile(io.BytesIO(artifact_bytes)) as z:
             for file_info in z.infolist():
                 filename = file_info.filename.lower()
+     
                 
                 # 1. SARIF Parsing (Gitleaks, Semgrep, etc.)
                 if filename.endswith(".sarif"):
