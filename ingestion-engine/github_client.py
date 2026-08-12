@@ -34,6 +34,9 @@ class GitHubClient:
                 response.raise_for_status()
                 return response
 
+            except requests.exceptions.SSLError as e:
+                print(f"SSL Error on {url} (Likely an Enterprise Proxy). Aborting without retries: {str(e)}")
+                return None
             except RequestException as e:
                 print(f"API Error on {url}: {str(e)}")
                 if response is not None and response.status_code < 500 and response.status_code != 403:
