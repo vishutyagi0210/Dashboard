@@ -1,0 +1,26 @@
+{
+  "name": "aws-sso-accelerator",
+  "full_name": "ot-central-team/aws-sso-accelerator",
+  "language": "HCL",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:00:17.730528+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "ashutosh-pw",
+      "commits": 7
+    },
+    {
+      "login": "rajatvats-devops",
+      "commits": 1
+    }
+  ],
+  "workflows": []
+}

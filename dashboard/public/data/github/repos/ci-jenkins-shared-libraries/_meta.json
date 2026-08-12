@@ -1,0 +1,30 @@
+{
+  "name": "ci-jenkins-shared-libraries",
+  "full_name": "ot-central-team/ci-jenkins-shared-libraries",
+  "language": "Groovy",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:00:04.494315+00:00",
+  "insights": {
+    "open_issues": 15,
+    "open_prs": 9
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "anshulpatel111",
+      "commits": 89
+    },
+    {
+      "login": "ayush090909",
+      "commits": 74
+    },
+    {
+      "login": "anshul81095",
+      "commits": 60
+    }
+  ],
+  "workflows": []
+}

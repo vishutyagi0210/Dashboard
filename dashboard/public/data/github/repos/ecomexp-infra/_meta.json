@@ -1,0 +1,30 @@
+{
+  "name": "ecomexp-infra",
+  "full_name": "ot-central-team/ecomexp-infra",
+  "language": "HCL",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:00:46.062888+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "ankit79056",
+      "commits": 3
+    },
+    {
+      "login": "ayush090909",
+      "commits": 3
+    },
+    {
+      "login": "rajatvats-devops",
+      "commits": 2
+    }
+  ],
+  "workflows": []
+}

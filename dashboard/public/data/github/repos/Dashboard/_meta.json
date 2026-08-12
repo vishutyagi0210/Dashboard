@@ -1,0 +1,35 @@
+{
+  "name": "Dashboard",
+  "full_name": "ot-central-team/Dashboard",
+  "language": "JavaScript",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:01:28.640294+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "vishutyagi0210",
+      "commits": 27
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Build and Push Ingestion Image",
+      "file": ".github/workflows/build-ingestion-image.yml"
+    },
+    {
+      "name": "Deploy Dashboard to S3",
+      "file": ".github/workflows/cd-dashboard.yml"
+    },
+    {
+      "name": "Ingest DevOps Reports",
+      "file": ".github/workflows/ci-ingest.yml"
+    }
+  ]
+}

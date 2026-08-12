@@ -1,0 +1,22 @@
+{
+  "name": "security-accelerator",
+  "full_name": "ot-central-team/security-accelerator",
+  "language": null,
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:00:25.403164+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "AnkurV-opstree",
+      "commits": 4
+    }
+  ],
+  "workflows": []
+}

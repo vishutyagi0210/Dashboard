@@ -1,0 +1,26 @@
+{
+  "name": "backup-accelerator",
+  "full_name": "ot-central-team/backup-accelerator",
+  "language": "Python",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:00:08.747606+00:00",
+  "insights": {
+    "open_issues": 3,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "fateh-khan2",
+      "commits": 20
+    },
+    {
+      "login": "rajatvats-devops",
+      "commits": 4
+    }
+  ],
+  "workflows": []
+}

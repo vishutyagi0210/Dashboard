@@ -1,0 +1,26 @@
+{
+  "name": "aws-budget-accelerator",
+  "full_name": "ot-central-team/aws-budget-accelerator",
+  "language": "Python",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:00:10.247670+00:00",
+  "insights": {
+    "open_issues": 11,
+    "open_prs": 2
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "piiiyuushh",
+      "commits": 59
+    },
+    {
+      "login": "rajatvats-devops",
+      "commits": 8
+    }
+  ],
+  "workflows": []
+}

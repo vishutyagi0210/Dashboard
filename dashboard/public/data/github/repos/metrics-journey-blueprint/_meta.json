@@ -1,0 +1,26 @@
+{
+  "name": "metrics-journey-blueprint",
+  "full_name": "ot-central-team/metrics-journey-blueprint",
+  "language": "Python",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:00:51.740581+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "iamabhishek-dubey",
+      "commits": 3
+    },
+    {
+      "login": "iabhishek-dubey",
+      "commits": 2
+    }
+  ],
+  "workflows": []
+}

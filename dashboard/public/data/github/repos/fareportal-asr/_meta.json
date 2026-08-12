@@ -1,0 +1,22 @@
+{
+  "name": "fareportal-asr",
+  "full_name": "ot-central-team/fareportal-asr",
+  "language": "HCL",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:00:31.492496+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 4
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "rajatvats-devops",
+      "commits": 1
+    }
+  ],
+  "workflows": []
+}

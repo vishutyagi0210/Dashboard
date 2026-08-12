@@ -1,0 +1,30 @@
+{
+  "name": "cars24",
+  "full_name": "ot-central-team/cars24",
+  "language": "HCL",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T05:00:29.808138+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "hardeepsinghbamrah",
+      "commits": 44
+    },
+    {
+      "login": "vijayopstree",
+      "commits": 42
+    },
+    {
+      "login": "shwetatyagi-ot",
+      "commits": 8
+    }
+  ],
+  "workflows": []
+}
