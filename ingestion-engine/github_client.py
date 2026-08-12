@@ -13,8 +13,6 @@ class GitHubClient:
             "X-GitHub-Api-Version": "2022-11-28"
         }
 
-        
-        
         self.api_calls_made = 0
         self.call_log = []
         self.rate_limit = 5000
