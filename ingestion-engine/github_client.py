@@ -9,7 +9,7 @@ class GitHubClient:
         self.base_url = "https://api.github.com"
         self.headers = {
             "Accept": "application/vnd.github.v3+json",
-            "Authorization": f"Bearer {token}" if token else "",
+            "Authorization": f"Bearer {token.strip()}" if token else "",
             "X-GitHub-Api-Version": "2022-11-28"
         }
 
