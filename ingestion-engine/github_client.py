@@ -109,8 +109,3 @@ class GitHubClient:
         """Used for downloading raw logs."""
         response = self._make_request("GET", endpoint)
         return response.text if response else None
-
-    def get_binary(self, endpoint):
-        """Used for downloading raw binary data like zip artifacts."""
-        response = self._make_request("GET", endpoint)
-        return response.content if response else None

@@ -1,12 +1,10 @@
 import os
 import json
 from datetime import datetime, timezone
-import requests
 
 from github_client import GitHubClient
 from log_analyzer import extract_error_snippet
 from dora_calculator import calculate_dora_metrics
-from artifact_parser import parse_artifact_zip
 
 
 # Configuration
@@ -156,14 +154,6 @@ def fetch_repo_runs(client, owner, repo, repo_dir):
                 "billable_minutes": round(billable_minutes, 2)
             }
                 
-            # Fetch Artifacts ONLY for the very latest pipeline (to save time)
-            if len(new_runs) == 0:
-                artifacts_list = client.get_paginated(f"/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
-                if artifacts_list is None:
-                    artifacts_list = []
-                
-                run_entry["artifact_names"] = [art.get("name") for art in artifacts_list]
-
             new_runs.append(run_entry)
             
         if found_existing or len(new_runs) >= HISTORY_DEPTH:
