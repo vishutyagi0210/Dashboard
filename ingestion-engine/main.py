@@ -127,6 +127,8 @@ def fetch_repo_runs(client, owner, repo, repo_dir):
             
             # Fetch jobs
             jobs_data = client.get_paginated(f"/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
+            if jobs_data is None:
+                jobs_data = []
             for job in jobs_data:
                 error_snippet = None
                 if job.get("conclusion") == "failure":
@@ -138,6 +140,19 @@ def fetch_repo_runs(client, owner, repo, repo_dir):
                     "status": job.get("conclusion"),
                     "error_snippet": error_snippet
                 })
+                
+            # Fetch Timing
+            timing_data = client.get(f"/repos/{owner}/{repo}/actions/runs/{run_id}/timing")
+            run_duration_ms = timing_data.get("run_duration_ms", 0) if timing_data else 0
+            billable_minutes = 0
+            if timing_data and "billable" in timing_data:
+                for os_type, stats in timing_data["billable"].items():
+                    billable_minutes += (stats.get("total_ms", 0) / 60000)
+            
+            run_entry["timing"] = {
+                "run_duration_ms": run_duration_ms,
+                "billable_minutes": round(billable_minutes, 2)
+            }
                 
             new_runs.append(run_entry)
             
@@ -168,8 +183,23 @@ def main():
     
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
+    # 0. Fetch self-hosted runners
+    print(f"\nFetching Self-Hosted Runners for {ORG_NAME}...")
+    runners_data = client.get_paginated(f"/orgs/{ORG_NAME}/actions/runners")
+    runners_summary = []
+    if runners_data:
+        for r in runners_data:
+            runners_summary.append({
+                "name": r.get("name"),
+                "os": r.get("os"),
+                "status": r.get("status", "unknown"),
+                "busy": r.get("busy", False)
+            })
+    
     # 1. Fetch all repos
     repos_data = client.get_paginated(f"/orgs/{ORG_NAME}/repos")
+    if repos_data is None:
+        repos_data = []
     
     overview_repos = []
     
@@ -237,6 +267,7 @@ def main():
             "total_open_prs": sum(r["open_prs"] for r in overview_repos),
             "overall_success_rate": dora_results["overall_success_rate"]
         },
+        "self_hosted_runners": runners_summary,
         "dora_metrics": {
             "deployment_frequency": dora_results["deployment_frequency"],
             "change_failure_rate": dora_results["change_failure_rate"],
