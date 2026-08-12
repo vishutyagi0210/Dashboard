@@ -200,21 +200,29 @@ def main():
     
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # 0. Fetch self-hosted runners
-    print(f"\nFetching Self-Hosted Runners for {org_name}...")
-    runners_data = client.get_paginated(f"/orgs/{org_name}/actions/runners")
+    # Determine account type
+    account_info = client.get(f"/users/{org_name}")
+    account_type = account_info.get("type", "Organization") if account_info else "Organization"
+    
+    print(f"\nAccount Type detected as: {account_type}")
+    
+    # 0. Fetch self-hosted runners (Only available for Organizations)
     runners_summary = []
-    if runners_data:
-        for r in runners_data:
-            runners_summary.append({
-                "name": r.get("name"),
-                "os": r.get("os"),
-                "status": r.get("status", "unknown"),
-                "busy": r.get("busy", False)
-            })
+    if account_type == "Organization":
+        print(f"\nFetching Self-Hosted Runners for {org_name}...")
+        runners_data = client.get_paginated(f"/orgs/{org_name}/actions/runners")
+        if runners_data:
+            for r in runners_data:
+                runners_summary.append({
+                    "name": r.get("name"),
+                    "os": r.get("os"),
+                    "status": r.get("status", "unknown"),
+                    "busy": r.get("busy", False)
+                })
     
     # 1. Fetch all repos
-    repos_data = client.get_paginated(f"/orgs/{org_name}/repos")
+    repos_endpoint = f"/users/{org_name}/repos" if account_type == "User" else f"/orgs/{org_name}/repos"
+    repos_data = client.get_paginated(repos_endpoint)
     if repos_data is None:
         repos_data = []
         
