@@ -1,4 +1,4 @@
-organization: "ot-central-team"
+organization: "vishutyagi0210"
 
 # Global defaults for all repositories
 defaults:
@@ -12,10 +12,6 @@ defaults:
 repositories:
   - name: "Dashboard"
     history_depth: 10
-    fetch_cache: true
-    fetch_contributors: true
-  - name: "k8s-accelerator"
-    fetch_cache: false
-    fetch_contributors: false
-  - name: "ci-jenkins-shared-libraries"
-    history_depth: 3
+  - name: "POC_PR_ALERT"
+  - name: "kubeadm-k8s-setup"
+  - name: "github-ci-cd-with-labs"
