@@ -14,6 +14,7 @@ class GitHubClient:
         }
 
         
+        
         self.api_calls_made = 0
         self.call_log = []
         self.rate_limit = 5000
