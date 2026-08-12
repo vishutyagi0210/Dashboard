@@ -1,0 +1,22 @@
+{
+  "name": "kubeadm-k8s-setup",
+  "full_name": "vishutyagi0210/kubeadm-k8s-setup",
+  "language": "Unknown",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T10:05:37.452643+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "vishutyagi0210",
+      "commits": 1
+    }
+  ],
+  "workflows": []
+}

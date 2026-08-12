@@ -1,0 +1,72 @@
+{
+  "org": "vishutyagi0210",
+  "provider": "github",
+  "last_synced": "2026-08-12T10:05:38.792511+00:00",
+  "summary": {
+    "total_repos": 4,
+    "total_open_issues": 0,
+    "total_open_prs": 0,
+    "overall_success_rate": 11.1
+  },
+  "self_hosted_runners": [],
+  "dora_metrics": {
+    "deployment_frequency": {
+      "value": 4,
+      "unit": "deploys/week",
+      "trend": "stable"
+    },
+    "change_failure_rate": {
+      "value": 33.3,
+      "unit": "percent",
+      "trend": "stable"
+    },
+    "mttr": {
+      "value": 10,
+      "unit": "minutes",
+      "trend": "stable"
+    },
+    "pr_cycle_time": {
+      "value": 0,
+      "unit": "hours",
+      "trend": "stable"
+    }
+  },
+  "repos": [
+    {
+      "name": "Dashboard",
+      "language": "JavaScript",
+      "last_run_status": "success",
+      "last_run_at": "2026-08-12T10:05:11Z",
+      "success_rate": 44.4,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "github-ci-cd-with-labs",
+      "language": "Shell",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "kubeadm-k8s-setup",
+      "language": "Unknown",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    },
+    {
+      "name": "POC_PR_ALERT",
+      "language": "Python",
+      "last_run_status": "unknown",
+      "last_run_at": null,
+      "success_rate": 0,
+      "open_issues": 0,
+      "open_prs": 0
+    }
+  ]
+}

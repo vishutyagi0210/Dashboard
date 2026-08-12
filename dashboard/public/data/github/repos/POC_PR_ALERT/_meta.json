@@ -1,0 +1,22 @@
+{
+  "name": "POC_PR_ALERT",
+  "full_name": "vishutyagi0210/POC_PR_ALERT",
+  "language": "Python",
+  "default_branch": "main",
+  "last_synced": "2026-08-12T10:05:38.497667+00:00",
+  "insights": {
+    "open_issues": 0,
+    "open_prs": 0
+  },
+  "cache_usage": {
+    "total_size_mb": 0.0,
+    "total_count": 0
+  },
+  "top_contributors": [
+    {
+      "login": "vishutyagi0210",
+      "commits": 5
+    }
+  ],
+  "workflows": []
+}
