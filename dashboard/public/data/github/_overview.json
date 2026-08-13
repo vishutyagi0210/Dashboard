@@ -1,7 +1,7 @@
 {
   "org": "vishutyagi0210",
   "provider": "github",
-  "last_synced": "2026-08-12T18:42:53.725330+00:00",
+  "last_synced": "2026-08-13T00:52:39.815296+00:00",
   "summary": {
     "total_repos": 4,
     "total_open_issues": 0,
@@ -16,12 +16,12 @@
       "trend": "stable"
     },
     "change_failure_rate": {
-      "value": 30.0,
+      "value": 40.0,
       "unit": "percent",
       "trend": "stable"
     },
     "mttr": {
-      "value": 92,
+      "value": 144,
       "unit": "minutes",
       "trend": "stable"
     },
@@ -36,7 +36,7 @@
       "name": "Dashboard",
       "language": "JavaScript",
       "last_run_status": "failure",
-      "last_run_at": "2026-08-12T14:35:09Z",
+      "last_run_at": "2026-08-12T18:43:20Z",
       "success_rate": 50.0,
       "open_issues": 0,
       "open_prs": 0
