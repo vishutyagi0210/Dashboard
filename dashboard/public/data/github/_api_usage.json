@@ -8,11 +8,11 @@
       "GET /repos/vishutyagi0210/Dashboard/actions/cache/usage",
       "GET /repos/vishutyagi0210/Dashboard/contributors",
       "GET /repos/vishutyagi0210/Dashboard/actions/runs?per_page=10&page=1",
-      "GET /repos/vishutyagi0210/Dashboard/actions/runs/32761866123/jobs",
-      "GET /repos/vishutyagi0210/Dashboard/actions/jobs/97542335343/logs",
-      "GET /repos/vishutyagi0210/Dashboard/actions/runs/32761866123/timing",
-      "GET /repos/vishutyagi0210/Dashboard/actions/runs/32761830049/jobs",
-      "GET /repos/vishutyagi0210/Dashboard/actions/runs/32761830049/timing",
+      "GET /repos/vishutyagi0210/Dashboard/actions/runs/32793819399/jobs",
+      "GET /repos/vishutyagi0210/Dashboard/actions/jobs/97640846516/logs",
+      "GET /repos/vishutyagi0210/Dashboard/actions/runs/32793819399/timing",
+      "GET /repos/vishutyagi0210/Dashboard/actions/runs/32793791260/jobs",
+      "GET /repos/vishutyagi0210/Dashboard/actions/runs/32793791260/timing",
       "GET /repos/vishutyagi0210/github-ci-cd-with-labs/pulls?state=open&per_page=100",
       "GET /repos/vishutyagi0210/github-ci-cd-with-labs/actions/cache/usage",
       "GET /repos/vishutyagi0210/github-ci-cd-with-labs/contributors",
@@ -28,9 +28,40 @@
     ],
     "rate_limit": 5000,
     "rate_limit_remaining": 4983,
-    "last_synced": "2026-08-25T00:29:02.019300+00:00"
+    "last_synced": "2026-08-25T06:22:20.582051+00:00"
   },
   "history": [
+    {
+      "api_calls_made": 23,
+      "call_log": [
+        "GET /users/vishutyagi0210",
+        "GET /users/vishutyagi0210/repos",
+        "GET /repos/vishutyagi0210/Dashboard/pulls?state=open&per_page=100",
+        "GET /repos/vishutyagi0210/Dashboard/actions/cache/usage",
+        "GET /repos/vishutyagi0210/Dashboard/contributors",
+        "GET /repos/vishutyagi0210/Dashboard/actions/runs?per_page=10&page=1",
+        "GET /repos/vishutyagi0210/Dashboard/actions/runs/32793819399/jobs",
+        "GET /repos/vishutyagi0210/Dashboard/actions/jobs/97640846516/logs",
+        "GET /repos/vishutyagi0210/Dashboard/actions/runs/32793819399/timing",
+        "GET /repos/vishutyagi0210/Dashboard/actions/runs/32793791260/jobs",
+        "GET /repos/vishutyagi0210/Dashboard/actions/runs/32793791260/timing",
+        "GET /repos/vishutyagi0210/github-ci-cd-with-labs/pulls?state=open&per_page=100",
+        "GET /repos/vishutyagi0210/github-ci-cd-with-labs/actions/cache/usage",
+        "GET /repos/vishutyagi0210/github-ci-cd-with-labs/contributors",
+        "GET /repos/vishutyagi0210/github-ci-cd-with-labs/actions/runs?per_page=5&page=1",
+        "GET /repos/vishutyagi0210/kubeadm-k8s-setup/pulls?state=open&per_page=100",
+        "GET /repos/vishutyagi0210/kubeadm-k8s-setup/actions/cache/usage",
+        "GET /repos/vishutyagi0210/kubeadm-k8s-setup/contributors",
+        "GET /repos/vishutyagi0210/kubeadm-k8s-setup/actions/runs?per_page=5&page=1",
+        "GET /repos/vishutyagi0210/POC_PR_ALERT/pulls?state=open&per_page=100",
+        "GET /repos/vishutyagi0210/POC_PR_ALERT/actions/cache/usage",
+        "GET /repos/vishutyagi0210/POC_PR_ALERT/contributors",
+        "GET /repos/vishutyagi0210/POC_PR_ALERT/actions/runs?per_page=5&page=1"
+      ],
+      "rate_limit": 5000,
+      "rate_limit_remaining": 4983,
+      "last_synced": "2026-08-25T06:22:20.582051+00:00"
+    },
     {
       "api_calls_made": 23,
       "call_log": [
@@ -1549,37 +1580,6 @@
       "rate_limit": 5000,
       "rate_limit_remaining": 4983,
       "last_synced": "2026-08-13T00:52:39.815617+00:00"
-    },
-    {
-      "api_calls_made": 23,
-      "call_log": [
-        "GET /users/vishutyagi0210",
-        "GET /users/vishutyagi0210/repos",
-        "GET /repos/vishutyagi0210/Dashboard/pulls?state=open&per_page=100",
-        "GET /repos/vishutyagi0210/Dashboard/actions/cache/usage",
-        "GET /repos/vishutyagi0210/Dashboard/contributors",
-        "GET /repos/vishutyagi0210/Dashboard/actions/runs?per_page=10&page=1",
-        "GET /repos/vishutyagi0210/Dashboard/actions/runs/31607552164/jobs",
-        "GET /repos/vishutyagi0210/Dashboard/actions/jobs/94150299520/logs",
-        "GET /repos/vishutyagi0210/Dashboard/actions/runs/31607552164/timing",
-        "GET /repos/vishutyagi0210/Dashboard/actions/runs/31607503880/jobs",
-        "GET /repos/vishutyagi0210/Dashboard/actions/runs/31607503880/timing",
-        "GET /repos/vishutyagi0210/github-ci-cd-with-labs/pulls?state=open&per_page=100",
-        "GET /repos/vishutyagi0210/github-ci-cd-with-labs/actions/cache/usage",
-        "GET /repos/vishutyagi0210/github-ci-cd-with-labs/contributors",
-        "GET /repos/vishutyagi0210/github-ci-cd-with-labs/actions/runs?per_page=5&page=1",
-        "GET /repos/vishutyagi0210/kubeadm-k8s-setup/pulls?state=open&per_page=100",
-        "GET /repos/vishutyagi0210/kubeadm-k8s-setup/actions/cache/usage",
-        "GET /repos/vishutyagi0210/kubeadm-k8s-setup/contributors",
-        "GET /repos/vishutyagi0210/kubeadm-k8s-setup/actions/runs?per_page=5&page=1",
-        "GET /repos/vishutyagi0210/POC_PR_ALERT/pulls?state=open&per_page=100",
-        "GET /repos/vishutyagi0210/POC_PR_ALERT/actions/cache/usage",
-        "GET /repos/vishutyagi0210/POC_PR_ALERT/contributors",
-        "GET /repos/vishutyagi0210/POC_PR_ALERT/actions/runs?per_page=5&page=1"
-      ],
-      "rate_limit": 5000,
-      "rate_limit_remaining": 4983,
-      "last_synced": "2026-08-12T18:42:53.725617+00:00"
     }
   ]
 }
