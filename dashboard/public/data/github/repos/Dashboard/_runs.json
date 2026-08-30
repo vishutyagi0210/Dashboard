@@ -4,6 +4,52 @@
   "total_runs": 10,
   "runs": [
     {
+      "run_id": "33307322475",
+      "workflow": "Deploy Dashboard to S3",
+      "branch": "main",
+      "sha": "06ddc43",
+      "trigger": "workflow_run",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-08-30T10:47:24Z",
+      "completed_at": "2026-08-30T10:47:42Z",
+      "jobs": [
+        {
+          "name": "build-and-deploy",
+          "status": "failure",
+          "error_snippet": "2026-08-30T10:47:39.8401347Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-08-30T10:47:39.8469747Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-08-30T10:47:39.8810135Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-08-30T10:47:39.8846583Z http.https://github.com/.extraheader\n2026-08-30T10:47:39.8888625Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-08-30T10:47:39.8928420Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-08-30T10:47:39.9216054Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-08-30T10:47:39.9260577Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-08-30T10:47:39.9692296Z Cleaning up orphan processes\n2026-08-30T10:47:40.0060526Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, aws-actions/configure-aws-credentials@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
+        }
+      ],
+      "artifacts": {},
+      "timing": {
+        "run_duration_ms": 18000,
+        "billable_minutes": 0.0
+      }
+    },
+    {
+      "run_id": "33307304219",
+      "workflow": "Ingest DevOps Reports",
+      "branch": "main",
+      "sha": "d9840f4",
+      "trigger": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-08-30T10:46:55Z",
+      "completed_at": "2026-08-30T10:47:22Z",
+      "jobs": [
+        {
+          "name": "ingest-data",
+          "status": "success",
+          "error_snippet": null
+        }
+      ],
+      "artifacts": {},
+      "timing": {
+        "run_duration_ms": 27000,
+        "billable_minutes": 0.0
+      }
+    },
+    {
       "run_id": "33286751379",
       "workflow": "Deploy Dashboard to S3",
       "branch": "main",
@@ -184,52 +230,6 @@
       "artifacts": {},
       "timing": {
         "run_duration_ms": 28000,
-        "billable_minutes": 0.0
-      }
-    },
-    {
-      "run_id": "33225801606",
-      "workflow": "Deploy Dashboard to S3",
-      "branch": "main",
-      "sha": "923b312",
-      "trigger": "workflow_run",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-08-29T01:13:05Z",
-      "completed_at": "2026-08-29T01:13:27Z",
-      "jobs": [
-        {
-          "name": "build-and-deploy",
-          "status": "failure",
-          "error_snippet": "2026-08-29T01:13:24.5821671Z [command]/usr/bin/git config --local --name-only --get-regexp core\\.sshCommand\n2026-08-29T01:13:24.5845783Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\"\n2026-08-29T01:13:24.6006465Z [command]/usr/bin/git config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\n2026-08-29T01:13:24.6186076Z http.https://github.com/.extraheader\n2026-08-29T01:13:24.6193557Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader\n2026-08-29T01:13:24.6215269Z [command]/usr/bin/git submodule foreach --recursive sh -c \"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\"\n2026-08-29T01:13:24.6386736Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\\.gitdir:\n2026-08-29T01:13:24.6408239Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url\n2026-08-29T01:13:24.6628674Z Cleaning up orphan processes\n2026-08-29T01:13:24.6808159Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, aws-actions/configure-aws-credentials@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
-        }
-      ],
-      "artifacts": {},
-      "timing": {
-        "run_duration_ms": 22000,
-        "billable_minutes": 0.0
-      }
-    },
-    {
-      "run_id": "33225783211",
-      "workflow": "Ingest DevOps Reports",
-      "branch": "main",
-      "sha": "8730a42",
-      "trigger": "schedule",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-08-29T01:12:41Z",
-      "completed_at": "2026-08-29T01:13:04Z",
-      "jobs": [
-        {
-          "name": "ingest-data",
-          "status": "success",
-          "error_snippet": null
-        }
-      ],
-      "artifacts": {},
-      "timing": {
-        "run_duration_ms": 23000,
         "billable_minutes": 0.0
       }
     }
