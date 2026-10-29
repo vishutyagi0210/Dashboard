@@ -8,9 +8,20 @@
     ],
     "rate_limit": 5000,
     "rate_limit_remaining": 5000,
-    "last_synced": "2026-10-29T03:03:11.407175+00:00"
+    "last_synced": "2026-10-29T11:51:06.062549+00:00"
   },
   "history": [
+    {
+      "api_calls_made": 3,
+      "call_log": [
+        "GET /users/vishutyagi0210",
+        "GET /orgs/vishutyagi0210/actions/runners",
+        "GET /orgs/vishutyagi0210/repos"
+      ],
+      "rate_limit": 5000,
+      "rate_limit_remaining": 5000,
+      "last_synced": "2026-10-29T11:51:06.062549+00:00"
+    },
     {
       "api_calls_made": 3,
       "call_log": [
@@ -549,17 +560,6 @@
       "rate_limit": 5000,
       "rate_limit_remaining": 5000,
       "last_synced": "2026-10-17T01:45:04.078479+00:00"
-    },
-    {
-      "api_calls_made": 3,
-      "call_log": [
-        "GET /users/vishutyagi0210",
-        "GET /orgs/vishutyagi0210/actions/runners",
-        "GET /orgs/vishutyagi0210/repos"
-      ],
-      "rate_limit": 5000,
-      "rate_limit_remaining": 5000,
-      "last_synced": "2026-10-16T20:08:40.587712+00:00"
     }
   ]
 }
